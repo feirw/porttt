@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Card } from './ui/card';
 import { Badge } from './ui/badge';
-import { usePersonalInfo, useSkills } from '../hooks/usePortfolioData';
+import { usePersonalInfo, useSkills } from './hooks/usePortfolioData';
 import LoadingSpinner from './LoadingSpinner';
 import ErrorMessage from './ErrorMessage';
 

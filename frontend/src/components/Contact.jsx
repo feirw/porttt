@@ -4,8 +4,8 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Mail, Phone, MapPin, Github, Linkedin, Send, CheckCircle } from 'lucide-react';
-import { useToast } from '../hooks/use-toast';
-import { usePersonalInfo, useContactForm } from '../hooks/usePortfolioData';
+import { useToast } from './hooks/use-toast';
+import { usePersonalInfo, useContactForm } from './hooks/usePortfolioData';
 import LoadingSpinner from './LoadingSpinner';
 import ErrorMessage from './ErrorMessage';
 

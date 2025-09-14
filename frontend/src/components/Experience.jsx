@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Building, Calendar, MapPin, Trophy } from 'lucide-react';
-import { useExperience, useEducation } from '../hooks/usePortfolioData';
+import { useExperience, useEducation } from './hooks/usePortfolioData';
 import LoadingSpinner from './LoadingSpinner';
 import ErrorMessage from './ErrorMessage';
 

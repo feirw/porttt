@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 import { Menu, X, Github, Download } from 'lucide-react';
-import { usePersonalInfo } from '../hooks/usePortfolioData';
+import { usePersonalInfo } from './hooks/usePortfolioData';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
