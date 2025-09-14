@@ -1,26 +1,23 @@
 // Mock data for CS student portfolio
 export const portfolioData = {
   personal: {
-    name: "Alex Thompson",
-    title: "Computer Science Student",
-    tagline: "Building the future with code",
-    bio: "Passionate CS student with a love for full-stack development, machine learning, and solving complex problems. Currently pursuing my Bachelor's in Computer Science with experience in modern web technologies and algorithms.",
-    email: "alex.thompson@email.com",
-    phone: "+1 (555) 123-4567",
-    location: "University Campus, Tech City",
+    name: "Ελένη Ζαφείρη",
+    title: "Project Manager & CS Student",
+    tagline: "Building the future with passion and detail",
+    bio: "Hello, my name is Eleni Zafeiri. I am a second-year student in the Department of Informatics and Telecommunications with a current GPA of 8.3/10. I graduated top of my class from high school with a grade of 19.7/20, and in the national entrance exams I ranked first in the Economics track with 19,000 points.In just one year at university, I have participated in several hackathons, attended technology events, earned multiple certifications in technology and project management, volunteered in tech-related projects, and built a strong professional network. At the same time, I run a TikTok and Instagram account, where I provide guidance to high school students in Informatics.My goal is to keep growing, while also helping others develop and succeed in technology.",
+    email: "elenzaff@icloud.com",
+    location: "Athens, Greece",
     resume: "/resume.pdf",
     social: {
-      github: "https://github.com/alexthompson",
-      linkedin: "https://linkedin.com/in/alexthompson",
-      twitter: "https://twitter.com/alexthompson"
+      github: "https://github.com/feirw",
+      linkedin: "https://linkedin.com/in/elenizafeiri",
     }
   },
   
   skills: {
-    languages: ["JavaScript", "Python", "Java", "C++", "TypeScript", "SQL"],
-    frameworks: ["React", "Node.js", "Express", "Django", "Spring Boot", "FastAPI"],
-    tools: ["Git", "Docker", "AWS", "MongoDB", "PostgreSQL", "Redis"],
-    concepts: ["Data Structures", "Algorithms", "Machine Learning", "System Design", "API Development"]
+    languages: ["C", "C#", "C++", "HTML", "CSS","SQL"],
+    tools: ["Git", "GitHub", "AWS", "Canva", "Jira", "Ora", "Notion", "Asana"],
+    methodologies: ["Agile", "Scrum"],
   },
   
   projects: [
