@@ -23,13 +23,12 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
-      title: "AI-Powered Task Manager",
-      description: "A smart task management application that uses machine learning to prioritize tasks and predict completion times. Built with React, Node.js, and TensorFlow.js.",
-      technologies: ["React", "Node.js", "TensorFlow.js", "MongoDB", "Express"],
-      features: ["Smart prioritization", "Time prediction", "Analytics dashboard", "Real-time sync"],
-      github: "https://github.com/alexthompson/ai-task-manager",
-      demo: "https://ai-taskmanager.demo.com",
-      status: "completed"
+      title: "Full Stack Tutor for Computer Science Students",
+      description: "I am currently developing a full-stack educational platform designed to support high school students in preparing for the Panhellenic exams in Informatics. The platform offers a wide variety of learning tools, including interactive quizzes, flashcards, annotated textbook notes, algorithm visualizations, past exam papers, and educational games. By combining study resources with gamified elements, it provides both an engaging and efficient way for students to learn. The project’s goal is not only to help students practice and succeed in their exams but also to make Informatics more approachable, enjoyable, and deeply understood.",
+      technologies: ["HTML", "Tailwind CSS", "JavaScript", "Python", "React.js"],
+      features: ["Interactive Quizzes", "Flashcards Mode", "Past Exam Papers", "Gamified Learning","Study Notes & Annotations"],
+      github: "https://github.com/feirw/technotesgr",
+      status: "in progress"
     },
     {
       id: 2,
