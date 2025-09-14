@@ -105,8 +105,8 @@ export const portfolioData = {
     ],
     achievements: [
       "1st Place at 2nd Blue and Circular Economy Hackathon : My team and I won a hackathon focused on the blue economy. We developed an online marketplace where amateur fishers can buy and sell second-hand fishing gear, promoting sustainability and resource reuse in the fishing community.",
-      "Awarded by the Athens University of Economics and Business in the ERMIS student economics competition, among over 1,000 participants.The exam covered topics in micro and macroeconomics, accounting, and business administration.",
-      "Awarded from Eurobank - mprosta gia thn paideia for being in the top 1% of students in Fthiotida",
+      "Awarded by AUEB in the ERMIS student economics competition, among over 1,000 participants.The exam covered topics in micro and macroeconomics, accounting, and business administration.",
+      "Awarded from Eurobank/Mprosta gia thn paideia for being in the top 1% of students in Fthiotida",
       "Awarded from Cultural Center of Lamia & Newspaper Lamia Report, for being the top student in high school(Panhellenic exams 19.000/20.000)",
     ]
   }
