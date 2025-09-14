@@ -139,7 +139,7 @@ const Hero = () => {
 
         {/* Scroll indicator */}
         <div 
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer animate-bounce"
+          className="absolute bottom-2 left-1/2 transform -translate-x-1/2 cursor-pointer animate-bounce"
           onClick={scrollToNext}
         >
           <ChevronDown className="w-8 h-8 text-gray-400 hover:text-white transition-colors" />

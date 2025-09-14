@@ -77,7 +77,7 @@ const Footer = () => {
               </a>
               <div className="flex space-x-4 pt-2">
                 <a
-                  href={portfolioData.personal.social.github}
+                  href={portfolioData.personal.social_links.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group"
@@ -85,7 +85,7 @@ const Footer = () => {
                   <Github className="w-5 h-5 text-gray-400 group-hover:text-white" />
                 </a>
                 <a
-                  href={portfolioData.personal.social.linkedin}
+                  href={portfolioData.personal.social_links.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group"
