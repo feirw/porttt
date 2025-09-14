@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Button } from './ui/button';
 import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
-import { usePersonalInfo } from '../hooks/usePortfolioData';
+import { usePersonalInfo } from './hooks/usePortfolioData';
 import LoadingSpinner from './LoadingSpinner';
 import ErrorMessage from './ErrorMessage';
 
