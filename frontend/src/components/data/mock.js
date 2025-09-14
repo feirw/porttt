@@ -32,7 +32,7 @@ export const portfolioData = {
     },
     {
       id: 2,
-      title: "Distributed Chat System",
+      title: "Hook & Grab : Online Marketplace for Second-Hand Fishing Gear",
       description: "A scalable real-time chat application supporting multiple rooms, file sharing, and video calls. Implemented with microservices architecture.",
       technologies: ["React", "Socket.io", "Redis", "Docker", "Kubernetes"],
       features: ["Real-time messaging", "File sharing", "Video calls", "Message encryption"],
@@ -65,10 +65,10 @@ export const portfolioData = {
   experience: [
     {
       id: 1,
-      company: "TechCorp Solutions",
-      position: "Software Development Intern",
-      duration: "Summer 2024",
-      location: "San Francisco, CA",
+      company: "Threenitas",
+      position: "Technical Project Manager",
+      duration: "October 2025 - Present",
+      location: "Hybrid,Athens,Greece",
       description: "Developed and maintained React components for the company's main product dashboard. Collaborated with senior developers on API integration and database optimization.",
       achievements: [
         "Improved dashboard loading speed by 40%",
@@ -78,10 +78,10 @@ export const portfolioData = {
     },
     {
       id: 2,
-      company: "University Research Lab",
-      position: "Research Assistant",
-      duration: "Sept 2023 - Present",
-      location: "University Campus",
+      company: "Technotesgr",
+      position: "Computer Science Tutor & Content Creator",
+      duration: "Sept 2024 - Present",
+      location: "Remote",
       description: "Assisting professors with machine learning research focused on natural language processing and sentiment analysis.",
       achievements: [
         "Co-authored 2 research papers",
@@ -92,22 +92,22 @@ export const portfolioData = {
   ],
   
   education: {
-    degree: "Bachelor of Science in Computer Science",
-    university: "Tech University",
-    duration: "2022 - 2026",
-    gpa: "3.8/4.0",
+    degree: "Bachelor in Computer Science",
+    university: "University of Athens",
+    duration: "2024 - 2028",
+    gpa: "8.3/10",
     relevant_courses: [
-      "Data Structures & Algorithms",
-      "Database Systems",
-      "Software Engineering",
-      "Machine Learning",
-      "Computer Networks",
-      "Operating Systems"
+      "Programming Fundamentals",
+      "Project Management",
+      "Tutoring for Computer Science Students",
+      "Data Structures and Algorithms",
+      "Web Development",
     ],
     achievements: [
-      "Dean's List (3 semesters)",
-      "President of CS Student Association",
-      "Hackathon winner (2 times)"
+      "1st Place at 2nd Blue and Circular Economy Hackathon : My team and I won a hackathon focused on the blue economy. We developed an online marketplace where amateur fishers can buy and sell second-hand fishing gear, promoting sustainability and resource reuse in the fishing community.",
+      "Awarded by the Athens University of Economics and Business in the ERMIS student economics competition, among over 1,000 participants.The exam covered topics in micro and macroeconomics, accounting, and business administration.",
+      "Awarded from Eurobank - mprosta gia thn paideia for being in the top 1% of students in Fthiotida",
+      "Awarded from Cultural Center of Lamia & Newspaper Lamia Report, for being the top student in high school(Panhellenic exams 19.000/20.000)",
     ]
   }
 };
