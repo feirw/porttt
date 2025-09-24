@@ -119,17 +119,6 @@ const Projects = () => {
               <Github className="w-4 h-4 mr-2" />
               Code
             </Button>
-            <Button
-              size="sm"
-              className="bg-white text-black hover:bg-gray-200 flex-1 transform hover:scale-105 transition-all"
-              onClick={(e) => {
-                e.stopPropagation();
-                window.open(project.demo_url, '_blank');
-              }}
-            >
-              <ExternalLink className="w-4 h-4 mr-2" />
-              Demo
-            </Button>
           </div>
         </CardContent>
 

@@ -72,7 +72,7 @@ const Experience = () => {
             Experience & <span className="bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">Education</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            My journey through internships, research, and academic achievements.
+            My journey through the professional world and research-based education.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-gray-600 to-white mx-auto mt-4"></div>
         </div>
@@ -181,7 +181,7 @@ const Experience = () => {
                   <div>
                     <h4 className="text-white font-semibold mb-3">Relevant Coursework</h4>
                     <div className="flex flex-wrap gap-2">
-                      {education.relevant_courses.map((course) => (
+                      {education.relevant_courses1.map((course) => (
                         <Badge 
                           key={course}
                           variant="secondary"
@@ -199,7 +199,7 @@ const Experience = () => {
                       Achievements
                     </h4>
                     <ul className="space-y-2">
-                      {education.achievements.map((achievement, idx) => (
+                      {education.achievements1.map((achievement, idx) => (
                         <li key={idx} className="text-gray-300 flex items-start">
                           <div className="w-2 h-2 bg-white rounded-full mr-3 mt-2 flex-shrink-0"></div>
                           <span>{achievement}</span>
@@ -211,6 +211,69 @@ const Experience = () => {
               </CardContent>
             </Card>
           </div>
+
+
+           <div>
+            <h3 className="text-3xl font-bold text-white mb-8 text-center my-4">My Highschool Experience</h3>
+            <Card className="bg-gradient-to-br from-gray-900/90 to-black/90 border-gray-700 hover:border-gray-500 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-white/10 backdrop-blur-sm">
+              <CardHeader>
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                  <CardTitle className="text-2xl font-bold text-white">
+                    High School Diploma : Computer Science & Finance
+                  </CardTitle>
+                  <Badge variant="secondary" className="bg-gray-800 text-gray-300 w-fit mt-2 md:mt-0">
+                    GPA: 19.7/20
+                  </Badge>
+                </div>
+                
+                <div className="space-y-2">
+                  <div className="flex items-center text-gray-400">
+                    <Building className="w-4 h-4 mr-2" />
+                    <span>General High School of Spercheiada</span>
+                  </div>
+                  <div className="flex items-center text-gray-400">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    <span>2021 - 2024</span>
+                  </div>
+                </div>
+              </CardHeader>
+
+              <CardContent>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="text-white font-semibold mb-3">Relevant Coursework</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {education.relevant_courses2.map((course) => (
+                        <Badge 
+                          key={course}
+                          variant="secondary"
+                          className="bg-gray-800 text-gray-300 hover:bg-gray-700 transition-colors text-xs"
+                        >
+                          {course}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-white font-semibold mb-3 flex items-center">
+                      <Trophy className="w-4 h-4 mr-2" />
+                      Achievements
+                    </h4>
+                    <ul className="space-y-2">
+                      {education.achievements2.map((achievement, idx) => (
+                        <li key={idx} className="text-gray-300 flex items-start">
+                          <div className="w-2 h-2 bg-white rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                          <span>{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
         </div>
       </div>
     </section>

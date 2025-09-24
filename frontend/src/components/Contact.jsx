@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
-import { Mail, Phone, MapPin, Github, Linkedin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Send, CheckCircle, InstagramIcon } from 'lucide-react';
 import { useToast } from './hooks/use-toast';
 import { usePersonalInfo, useContactForm } from './hooks/usePortfolioData';
 import LoadingSpinner from './LoadingSpinner';
@@ -137,15 +137,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4 p-4 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-colors cursor-pointer">
-                  <div className="p-3 bg-gray-700 rounded-full">
-                    <Phone className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold">Phone</h4>
-                    <p className="text-gray-400">{personalInfo.phone}</p>
-                  </div>
-                </div>
+              
 
                 <div className="flex items-center space-x-4 p-4 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-colors cursor-pointer">
                   <div className="p-3 bg-gray-700 rounded-full">
@@ -181,6 +173,14 @@ const Contact = () => {
                     className="p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group"
                   >
                     <Linkedin className="w-6 h-6 text-gray-300 group-hover:text-white" />
+                  </a>
+                  <a
+                    href={personalInfo.social_links.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group"
+                  >
+                    <InstagramIcon className="w-6 h-6 text-gray-300 group-hover:text-white" />
                   </a>
                 </div>
               </CardContent>

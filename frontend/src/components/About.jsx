@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Card } from './ui/card';
 import { Badge } from './ui/badge';
-import { usePersonalInfo, useSkills } from './hooks/usePortfolioData';
+import { usePersonalInfo, useSkills, useSoftSkills } from './hooks/usePortfolioData';
 import LoadingSpinner from './LoadingSpinner';
 import ErrorMessage from './ErrorMessage';
 
@@ -10,6 +10,7 @@ const About = () => {
   const sectionRef = useRef(null);
   const { personalInfo, loading: personalLoading, error: personalError } = usePersonalInfo();
   const { skills, loading: skillsLoading, error: skillsError } = useSkills();
+  const { softskills } = useSoftSkills();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -95,27 +96,13 @@ const About = () => {
                 </p>
               </div>
               
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                  <span className="text-gray-400">📍 {personalInfo.location}</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-white rounded-full animate-pulse delay-500"></div>
-                  <span className="text-gray-400">💼 {personalInfo.title}</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-white rounded-full animate-pulse delay-1000"></div>
-                  <span className="text-gray-400">📧 {personalInfo.email}</span>
-                </div>
-              </div>
             </Card>
           </div>
 
           {/* Skills Section */}
           <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <Card className="bg-gradient-to-br from-gray-900/80 to-black/80 border-gray-700 p-8 backdrop-blur-sm hover:shadow-2xl hover:shadow-white/10 transition-all duration-500">
-              <h3 className="text-2xl font-bold text-white mb-6">Tech Stack</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">Tech Skills</h3>
               
               <div className="space-y-6">
                 {/* Languages */}
@@ -173,6 +160,22 @@ const About = () => {
                       </Badge>
                     ))}
                   </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+           <div className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+            <Card className="bg-gradient-to-br from-gray-900/80 to-black/80 border-gray-700 p-8 backdrop-blur-sm hover:shadow-2xl hover:shadow-white/10 transition-all duration-500">
+              <h3 className="text-2xl font-bold text-white mb-6">Soft Skills</h3>
+              
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-gray-300 font-semibold mb-3 flex items-center">
+                    <div className="w-3 h-3 bg-gradient-to-r from-gray-400 to-white rounded-full mr-2"></div>
+                    Corporate
+                  </h4>
+                   
                 </div>
               </div>
             </Card>

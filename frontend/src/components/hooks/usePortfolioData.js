@@ -42,6 +42,11 @@ export const useSkills = () => {
   return { skills: data, loading, error };
 };
 
+export const useSoftSkills = () => {
+  const { data, loading, error } = useMockData(portfolioData.softskills);
+  return { softskills: data, loading, error };
+}
+
 // Custom hook for experience
 export const useExperience = () => {
   const { data, loading, error } = useMockData(portfolioData.experience);
@@ -53,6 +58,16 @@ export const useEducation = () => {
   const { data, loading, error } = useMockData(portfolioData.education);
   return { education: data, loading, error };
 };
+
+export const useCertificates = () => {
+  const { data, loading, error } = useMockData(portfolioData.certificates);
+  return { certificates: data, loading, error };
+}
+
+export const useVolunteer = () => {
+  const { data, loading, error } = useMockData(portfolioData.volunteer);
+  return { volunteer: data, loading, error };
+}
 
 // Custom hook for contact form submission
 export const useContactForm = () => {

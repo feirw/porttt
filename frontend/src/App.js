@@ -8,6 +8,8 @@ import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Certificates from "./components/Certificates";
+import Volunteer from "./components/Volunteer";
 import { Toaster } from "./components/ui/toaster";
 
 const Home = () => {
@@ -16,8 +18,10 @@ const Home = () => {
       <Navbar />
       <Hero />
       <About />
-      <Projects />
       <Experience />
+      <Projects />
+      <Certificates />
+      <Volunteer />
       <Contact />
       <Footer />
     </div>

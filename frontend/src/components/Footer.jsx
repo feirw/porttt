@@ -36,7 +36,6 @@ const Footer = () => {
               <Heart className="w-4 h-4 text-red-500 animate-pulse" />
               <span>and</span>
               <Coffee className="w-4 h-4 text-yellow-600" />
-              <span>by a CS student</span>
             </div>
           </div>
 
