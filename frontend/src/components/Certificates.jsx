@@ -117,25 +117,24 @@ const Certificates = () => {
                         {cert.date}
                       </Badge>
                     </div>
+                    
                     <div className="space-y-2 text-gray-400">
                       <div className="flex items-center">
                         <Award className="w-4 h-4 mr-2" />
                         <span>{cert.issuer}</span>
                       </div>
-                      {cert.link && (
-                        <div className="flex items-center">
+                      {cert.certificatePdf && (
+                        <button
+                          onClick={() => window.open(cert.certificatePdf)}
+                          className="flex items-center text-gray-400 hover:text-white transition-colors duration-300"
+                        >
                           <LinkIcon className="w-4 h-4 mr-2" />
-                          <a
-                            href={cert.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="underline hover:text-white"
-                          >
-                            View Certificate
-                          </a>
-                        </div>
+                          View Certificate
+                        </button>
                       )}
                     </div>
+
+                    
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-300 leading-relaxed">

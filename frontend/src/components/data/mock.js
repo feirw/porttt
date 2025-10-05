@@ -3,7 +3,7 @@ export const portfolioData = {
   personal: {
     name: "Eleni Zafeiri",
     title: "Project Manager & CS Student",
-    tagline: "Building the future with passion and detail",
+    tagline: "Enthousiast about Technology,Constant Learning and Organization",
     bio: "I am a second-year student in the Department of Informatics and Telecommunications with a current GPA of 8.3/10. I graduated with honors from my high school (Grade: 19.7/20 & Panhellenic exams: 19.000/20.000). After living in a small village without any experience in technology and in just one year at university, I have participated in several hackathons, attended technology events, earned multiple certifications in technology and project management, volunteered in tech-related projects, and built a strong professional network. At the same time, I run a TikTok and Instagram account, where I provide guidance to high school students in Informatics. My goal is to keep growing, while also helping others develop and succeed in technology.",
     email: "elenzaff@icloud.com",
     location: "Athens, Greece",
@@ -16,8 +16,8 @@ export const portfolioData = {
   },
 
   skills: {
-    languages: ["C", "C#", "C++", "HTML", "CSS", "SQL"],
-    frameworks: ["React.js", "Node.js"],
+    languages: ["C", "C#", "C++", "HTML", "CSS", "JS"],
+    frameworks: ["React.js"],
     concepts: ["Agile", "Scrum"],
     tools: ["GitHub", "VsCode", "Canva", "Jira", "Ora", "Notion", "Asana"],
   },
@@ -31,7 +31,7 @@ export const portfolioData = {
       id: 1,
       title: "Full Stack Tutor for Computer Science Students",
       description:
-        "Developing a full-stack educational platform designed to support high school students in preparing for the Panhellenic exams in Informatics.",
+        "Currently developing a full-stack educational platform designed to support high school students in preparing for the Panhellenic exams in Informatics.It offers interactive quizzes, flashcards, past exam papers, gamified learning experiences, and study notes to enhance student engagement and learning outcomes.",
       technologies: ["HTML", "Tailwind CSS", "JavaScript", "Python", "React.js"],
       features: [
         "Interactive Quizzes",
@@ -48,7 +48,7 @@ export const portfolioData = {
       id: 2,
       title: "Hook & Grab: Online Marketplace for Second-Hand Fishing Gear",
       description:
-        "An online marketplace where amateur fishers can buy and sell second-hand fishing gear, promoting sustainability and resource reuse. Developed during the 2nd Blue and Circular Economy Hackathon (1st place).",
+        "Full stack website - My team and I builded an online marketplace where amateur fishers can buy and sell second-hand fishing gear, promoting sustainability and resource reuse. Developed during the 2nd Blue and Circular Economy Hackathon (1st place). I also piteched the idea and managed the project.",
       technologies: ["Figma", "HTML", "CSS", "Python", "React.js"],
       features: [
         "User authentication",
@@ -66,15 +66,13 @@ export const portfolioData = {
     {
       id: 1,
       company: "Threenitas",
-      position: "Technical Project Manager",
-      duration: "October 2025 - Present",
+      position: "Business Analyst & Project Manager Trainee",
+      duration: "September 2025 - Present",
       location: "Hybrid, Athens, Greece",
       description:
         "Leading the planning and execution of software projects, ensuring delivery on time and within budget.",
       achievements: [
-        "Implemented Agile methodologies, improving team velocity by 25%.",
-        "Managed the successful launch of three major product features.",
-        "Improved stakeholder communication and reporting efficiency.",
+        "Improved onboarding process for trainees with structure notes and organized templates",
       ],
     },
      {
@@ -84,16 +82,14 @@ export const portfolioData = {
       duration: "September 2025 - Present",
       location: "Remote",
       description:
-        "Leading the planning and execution of software projects, ensuring delivery on time and within budget.",
+        "Maintaining and updating the website of an Asian Educational Center, ensuring optimal performance and user experience.",
       achievements: [
-        "Implemented Agile methodologies, improving team velocity by 25%.",
-        "Managed the successful launch of three major product features.",
-        "Improved stakeholder communication and reporting efficiency.",
+        "Improved the website's performance and user experience through regular updates and optimizations.",
       ],
     },
     {
       id: 2,
-      company: "Technotes.gr",
+      company: "technotesgr",
       position: "Computer Science Tutor & Content Creator",
       duration: "Sept 2024 - Present",
       location: "Remote",
@@ -111,7 +107,7 @@ export const portfolioData = {
     degree: "Bachelor in Computer Science",
     university: "National and Kapodistrian University of Athens",
     duration: "2024 - 2028",
-    gpa: "8.3/10",
+    gpa: "8.2/10",
     relevant_courses1: [
       "Programming Fundamentals",
       "Project Management",
@@ -140,14 +136,14 @@ export const portfolioData = {
   },
 
   certificates: [
-    {
-      id: 1,
-      title: "Elements of AI",
-      issuer: "University of Helsinki",
-      date: "9/2025-11/2025",
-      description: "Validated expertise in AI fundamentals.",
-      link: "https://www.elementsofai.com/",
-    },
+    // {
+    //   id: 1,
+    //   title: "Elements of AI",
+    //   issuer: "University of Helsinki",
+    //   date: "10/2025-11/2025",
+    //   description: "Validated expertise in AI fundamentals.",
+    //   link: "https://www.elementsofai.com/",
+    // },
     {
       id: 2,
       title: "McKinsey Forward Program",
@@ -155,6 +151,7 @@ export const portfolioData = {
       date: "10/2025-12/2025",
       description: "Specialization in data analysis, visualization, and SQL queries.",
       link: "https://forward.mckinsey.com/",
+      certificatePdf: "/certificates/",
     },
     {
       id: 3,
@@ -163,6 +160,7 @@ export const portfolioData = {
       date: "9/2025",
       description: "Discovered the role of a project manager and AI tools.",
       link: "https://workearly.gr/",
+      certificatePdf: "/certificates/workearly.pdf",
     },
     {
       id: 4,
@@ -171,6 +169,7 @@ export const portfolioData = {
       date: "8/2025",
       description: "Comprehensive training in digital literacy.",
       link: "https://www.netacad.com/",
+      certificatePdf: "/certificates/cisco.pdf",
     },
     {
       id: 5,
@@ -179,6 +178,7 @@ export const portfolioData = {
       date: "8/2025",
       description: "Studied IoT concepts and applications in digital transformation.",
       link: "https://www.netacad.com/",
+      certificatePdf: "/certificates/cisco.pdf",
     },
     {
       id: 6,
@@ -187,15 +187,17 @@ export const portfolioData = {
       date: "7/2025",
       description: "Learned about malware,protocols,networking and security.",
       link: "https://www.netacad.com/",
+      certificatePdf: "/certificates/cisco.pdf",
     },
-    // {
-    //   id: 7,
-    //   title: "SQL Essentials",
-    //   issuer: "Workearly",
-    //   date: "7/2025",
-    //   description: "Core SQL skills and database management.",
-    //   link: "https://workearly.gr/",
-    // },
+    {
+      id: 7,
+      title: "SQL Essentials",
+      issuer: "Workearly",
+      date: "7/2025",
+      description: "Core SQL skills and database management.",
+      link: "https://workearly.gr/",
+      certificatePdf: "/certificates/workearly_sql.pdf",
+    },
     {
       id: 8,
       title: "GenAI for Project Management & Sales",
@@ -203,6 +205,7 @@ export const portfolioData = {
       date: "6/2025",
       description: "Learned how to effectively use generative AI in project management and sales.",
       link: "https://thetippingpoint.org/",
+      certificatePdf: "/certificates/tippingpoint.pdf",
     },
     {
       id: 9,
@@ -211,6 +214,7 @@ export const portfolioData = {
       date: "1/2025",
       description: "How to pitch an idea effectively using data storytelling techniques.",
       link: "https://www2.deloitte.com/",
+      certificatePdf: "/certificates/deloitte.pdf",
     },
     {
       id: 10,
@@ -219,6 +223,7 @@ export const portfolioData = {
       date: "1/2025-5/2025",
       description: "How to be an excellent team leader who controls conflicts and does the best for the team without being authoritarian.",
       link: "https://linq.org/",
+      certificatePdf: "/certificates/linq.pdf",
     },
   ],
 
@@ -227,7 +232,7 @@ export const portfolioData = {
       id: 1,
       role: "Social Media Manager",
       organization: "HackHarvard 2025",
-      duration: "September 2025",
+      duration: "9/2025 - 11/25",
       location: "Remote",
       description:
         "I designed Insta & Linkedin posts, stories, and reels to promote the event and engage participants.",
@@ -236,7 +241,7 @@ export const portfolioData = {
       id: 2,
       role: "Volunteer for Technology Events",
       organization: "WeLead",
-      duration: "March 2024 - Present",
+      duration: "3/2025 - Present",
       location: "On-site",
       description:
         "Assisting in organizing and managing tech events aimed at empowering women in Technology.",
@@ -246,7 +251,7 @@ export const portfolioData = {
       id: 3,
       role: "Main Stage Support",
       organization: "Talent Days 2025 by Linq",  
-      duration: "April 2025",
+      duration: "4/2025",
       location: "On-site",
       description:
         "Assisted in managing the main stage, coordinating speakers, and ensuring smooth transitions between sessions.",
@@ -255,7 +260,7 @@ export const portfolioData = {
       id: 3,
       role: "Hackathon Coordinator & Mentor",
       organization: "Texas A&M University Hackathon",  
-      duration: "February 2025",
+      duration: "2/2025",
       location: "On-site",
       description:
         "Planed the event,made the time schedule, designed the posts for social media, and mentored participants during the hackathon.The event was hosted by UoA and Texas A&M University in Athens.",
@@ -264,11 +269,21 @@ export const portfolioData = {
       id: 3,
       role: "Project Manager & Mentor",
       organization: "DIT Coding Club",  
-      duration: "December 2024 - Present",
+      duration: "12/2024 - Present",
       location: "Hybrid",
       description:
         "My team and I organize events and hackathons in the Department of Informatics and Telecommunications of University of Athens, mentor students on their projects, and help them develop their technical and teamwork skills.",
     },
   ],
+
+  photos : [ 
+    {
+      url: "/photos/123.jpg",
+      title: "HackHarvard 2025",
+      description: "Volunteering as Social Media Manager for HackHarvard 2025.",
+      tag : "volunteer"
+    },
+  
+  ]
 };  
 export default portfolioData;

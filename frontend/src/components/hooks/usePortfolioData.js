@@ -69,10 +69,16 @@ export const useVolunteer = () => {
   return { volunteer: data, loading, error };
 }
 
+export const useGallery = () => {
+  const { data, loading, error } = useMockData(portfolioData.gallery);
+  return { photos: data, loading, error };
+}
+
 // Custom hook for contact form submission
 export const useContactForm = () => {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
+
 
   const submitForm = async (formData) => {
     return new Promise((resolve) => {
