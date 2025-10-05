@@ -151,7 +151,7 @@ export const portfolioData = {
       date: "10/2025-12/2025",
       description: "Specialization in data analysis, visualization, and SQL queries.",
       link: "https://forward.mckinsey.com/",
-      certificatePdf: "/certificates/",
+      certificatePdf: "/certificates/cur.pdf",
     },
     {
       id: 3,
@@ -169,7 +169,7 @@ export const portfolioData = {
       date: "8/2025",
       description: "Comprehensive training in digital literacy.",
       link: "https://www.netacad.com/",
-      certificatePdf: "/certificates/cisco.pdf",
+      certificatePdf: "/certificates/dig.pdf",
     },
     {
       id: 5,
@@ -178,7 +178,7 @@ export const portfolioData = {
       date: "8/2025",
       description: "Studied IoT concepts and applications in digital transformation.",
       link: "https://www.netacad.com/",
-      certificatePdf: "/certificates/cisco.pdf",
+      certificatePdf: "/certificates/cur.pdf",
     },
     {
       id: 6,
@@ -196,7 +196,7 @@ export const portfolioData = {
       date: "7/2025",
       description: "Core SQL skills and database management.",
       link: "https://workearly.gr/",
-      certificatePdf: "/certificates/workearly_sql.pdf",
+      certificatePdf: "/certificates/sql.pdf",
     },
     {
       id: 8,
@@ -205,7 +205,7 @@ export const portfolioData = {
       date: "6/2025",
       description: "Learned how to effectively use generative AI in project management and sales.",
       link: "https://thetippingpoint.org/",
-      certificatePdf: "/certificates/tippingpoint.pdf",
+      certificatePdf: "/certificates/tip.pdf",
     },
     {
       id: 9,
@@ -214,7 +214,7 @@ export const portfolioData = {
       date: "1/2025",
       description: "How to pitch an idea effectively using data storytelling techniques.",
       link: "https://www2.deloitte.com/",
-      certificatePdf: "/certificates/deloitte.pdf",
+      certificatePdf: "/certificates/deloite.pdf",
     },
     {
       id: 10,
@@ -223,7 +223,7 @@ export const portfolioData = {
       date: "1/2025-5/2025",
       description: "How to be an excellent team leader who controls conflicts and does the best for the team without being authoritarian.",
       link: "https://linq.org/",
-      certificatePdf: "/certificates/linq.pdf",
+      certificatePdf: "/certificates/",
     },
   ],
 

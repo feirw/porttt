@@ -181,7 +181,7 @@ const Gallery = ({ photos = [], loading, error }) => {
 
         {filteredPhotos.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-gray-400 text-lg">Coming Soon</p>
+            <p className="text-gray-400 text-lg">Coming Soon🔜</p>
           </div>
         )}
       </div>
