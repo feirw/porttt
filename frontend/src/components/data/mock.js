@@ -149,7 +149,7 @@ export const portfolioData = {
       title: "McKinsey Forward Program",
       issuer: "McKinsey & Company",
       date: "10/2025-12/2025",
-      description: "Specialization in data analysis, visualization, and SQL queries.",
+      description: "Selected for McKinsey's prestigious Forward Program and I am currently studying for it",
       link: "https://forward.mckinsey.com/",
       certificatePdf: "/certificates/cur.pdf",
     },
