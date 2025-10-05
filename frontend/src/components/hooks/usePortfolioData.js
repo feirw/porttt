@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { portfolioData } from '../data/mock';
+import emailjs from '@emailjs/browser';
 
-// Helper function to simulate API latency
+// Helper function to simulate API latency for mock data
 const useMockData = (data) => {
   const [state, setState] = useState({
     data: null,
@@ -23,6 +24,7 @@ const useMockData = (data) => {
 
   return state;
 };
+
 
 // Custom hook for personal info
 export const usePersonalInfo = () => {
@@ -74,25 +76,41 @@ export const useGallery = () => {
   return { photos: data, loading, error };
 }
 
-// Custom hook for contact form submission
+
 export const useContactForm = () => {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
 
-
   const submitForm = async (formData) => {
-    return new Promise((resolve) => {
-      setSubmitting(true);
-      setError(null);
-      console.log('Simulating form submission with data:', formData);
-      
-      // Simulate network delay
-      setTimeout(() => {
-        setSubmitting(false);
-        // Simulate a successful response
-        resolve({ message: 'Message sent successfully!' });
-      }, 1000);
-    });
+    setSubmitting(true);
+    setError(null);
+
+    // Fetch credentials from environment variables
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+    // Validate that environment variables are set
+    if (!serviceId || !templateId || !publicKey) {
+      const errorMessage = "EmailJS credentials are not configured in the .env file.";
+      console.error(errorMessage);
+      setError(errorMessage);
+      setSubmitting(false);
+      throw new Error(errorMessage);
+    }
+    
+    try {
+      // Send the email using EmailJS
+      await emailjs.send(serviceId, templateId, formData, publicKey);
+      setSubmitting(false);
+    } catch (err) {
+      console.error('EmailJS submission failed:', err);
+      const errorMessage = 'Failed to send the message. Please try again later.';
+      setError(errorMessage);
+      setSubmitting(false);
+      // Re-throw the error so the component can catch it
+      throw err; 
+    }
   };
 
   return { submitForm, submitting, error };

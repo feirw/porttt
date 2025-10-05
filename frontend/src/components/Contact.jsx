@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
-import { Mail, Phone, MapPin, Github, Linkedin, Send, CheckCircle, InstagramIcon } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin, Send, InstagramIcon } from 'lucide-react';
 import { useToast } from './hooks/use-toast';
 import { usePersonalInfo, useContactForm } from './hooks/usePortfolioData';
 import LoadingSpinner from './LoadingSpinner';
@@ -32,11 +32,16 @@ const Contact = () => {
       { threshold: 0.2 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentSectionRef = sectionRef.current;
+    if (currentSectionRef) {
+      observer.observe(currentSectionRef);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      if (currentSectionRef) {
+        observer.unobserve(currentSectionRef);
+      }
+    };
   }, []);
 
   const handleInputChange = (e) => {
@@ -55,6 +60,7 @@ const Contact = () => {
         title: "Message sent successfully!",
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
+      // Reset form after successful submission
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       toast({
@@ -136,8 +142,6 @@ const Contact = () => {
                     <p className="text-gray-400">{personalInfo.email}</p>
                   </div>
                 </div>
-
-              
 
                 <div className="flex items-center space-x-4 p-4 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-colors cursor-pointer">
                   <div className="p-3 bg-gray-700 rounded-full">
