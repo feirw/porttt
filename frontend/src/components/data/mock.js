@@ -70,7 +70,7 @@ export const portfolioData = {
       duration: "September 2025 - Present",
       location: "Hybrid, Athens, Greece",
       description:
-        "Leading the planning and execution of software projects, ensuring delivery on time and within budget.",
+        "Currently learning how to effectively lead the planning and execution of software projects, ensuring delivery on time and within budget.",
       achievements: [
         "Improved onboarding process for trainees with structure notes and organized templates",
       ],
