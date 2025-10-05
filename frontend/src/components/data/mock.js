@@ -17,9 +17,9 @@ export const portfolioData = {
 
   skills: {
     languages: ["C", "C#", "C++", "HTML", "CSS", "JS"],
-    frameworks: ["React.js"],
+    frameworks: ["React.js"," Tailwind CSS"],
     concepts: ["Agile", "Scrum"],
-    tools: ["GitHub", "VsCode", "Canva", "Jira", "Ora", "Notion", "Asana"],
+    tools: ["GitHub", "VsCode","Confluence","Clockify", "Jira", "Ora", "Notion", "Asana"],
   },
 
   softskills: {
