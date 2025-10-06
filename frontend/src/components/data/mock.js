@@ -48,7 +48,7 @@ export const portfolioData = {
       id: 2,
       title: "Hook & Grab: Online Marketplace for Second-Hand Fishing Gear",
       description:
-        "Full stack website - My team and I builded an online marketplace where amateur fishers can buy and sell second-hand fishing gear, promoting sustainability and resource reuse. Developed during the 2nd Blue and Circular Economy Hackathon (1st place). I also pitched the idea and managed the project.",
+        "Full stack website - My team and I built an online marketplace where amateur fishers can buy and sell second-hand fishing gear, promoting sustainability and resource reuse. Developed during the 2nd Blue and Circular Economy Hackathon (1st place). I also pitched the idea and managed the project.",
       technologies: ["Figma", "HTML", "CSS", "Python", "React.js"],
       features: [
         "User authentication",
