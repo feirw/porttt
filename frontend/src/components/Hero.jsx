@@ -83,6 +83,7 @@ const Hero = () => {
             {personalInfo.name}
           </h1>
           
+          {/* Typewriter effect for title */}
           <div className="text-2xl md:text-3xl text-gray-300 mb-4 font-light">
             <span className="inline-block animate-typewriter">
               {personalInfo.title}
