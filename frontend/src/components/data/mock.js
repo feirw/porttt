@@ -190,15 +190,6 @@ export const portfolioData = {
       certificatePdf: "/certificates/cisco.pdf",
     },
     {
-      id: 7,
-      title: "SQL Essentials",
-      issuer: "Workearly",
-      date: "7/2025",
-      description: "Core SQL skills and database management.",
-      link: "https://workearly.gr/",
-      certificatePdf: "/certificates/sql.pdf",
-    },
-    {
       id: 8,
       title: "GenAI for Project Management & Sales",
       issuer: "The Tipping Point",
