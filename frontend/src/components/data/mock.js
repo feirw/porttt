@@ -2,7 +2,7 @@
 export const portfolioData = {
   personal: {
     name: "Eleni Zafeiri",
-    title: "Project Manager & CS Student",
+    title: "Computer Science Student",
     tagline: "Enthousiast about Technology,Constant Learning and Organization",
     bio: "I am a second-year student in the Department of Informatics and Telecommunications with a current GPA of 8.3/10. I graduated with honors from my high school (Grade: 19.7/20 & Panhellenic exams: 19.000/20.000). After living in a small village without any experience in technology and in just one year at university, I have participated in several hackathons, attended technology events, earned multiple certifications in technology and project management, volunteered in tech-related projects, and built a strong professional network. At the same time, I run a TikTok and Instagram account, where I provide guidance to high school students in Informatics. My goal is to keep growing, while also helping others develop and succeed in technology.",
     email: "elenzaff@icloud.com",
@@ -19,7 +19,7 @@ export const portfolioData = {
     languages: ["C", "C#", "C++", "HTML", "CSS", "JS"],
     frameworks: ["React.js"," Tailwind CSS"],
     concepts: ["Agile", "Scrum"],
-    tools: ["GitHub", "VsCode","Confluence","Clockify", "Jira", "Ora", "Notion", "Asana"],
+    tools: ["GitHub", "VScode","Confluence", "Jira", "Ora", "Notion", "Asana"],
   },
 
   softskills: {
@@ -66,7 +66,7 @@ export const portfolioData = {
     {
       id: 1,
       company: "Threenitas",
-      position: "Business Analyst & Project Manager Trainee",
+      position: "Business Analyst & Project Manager Internship",
       duration: "September 2025 - Present",
       location: "Hybrid, Athens, Greece",
       description:
@@ -136,14 +136,6 @@ export const portfolioData = {
   },
 
   certificates: [
-    // {
-    //   id: 1,
-    //   title: "Elements of AI",
-    //   issuer: "University of Helsinki",
-    //   date: "10/2025-11/2025",
-    //   description: "Validated expertise in AI fundamentals.",
-    //   link: "https://www.elementsofai.com/",
-    // },
     {
       id: 2,
       title: "McKinsey Forward Program",
@@ -170,15 +162,6 @@ export const portfolioData = {
       description: "Comprehensive training in digital literacy.",
       link: "https://www.netacad.com/",
       certificatePdf: "/certificates/dig.pdf",
-    },
-    {
-      id: 5,
-      title: "IoT and Digital Transformation",
-      issuer: "CISCO Networking Academy",
-      date: "8/2025",
-      description: "Studied IoT concepts and applications in digital transformation.",
-      link: "https://www.netacad.com/",
-      certificatePdf: "/certificates/cur.pdf",
     },
     {
       id: 6,
@@ -221,9 +204,18 @@ export const portfolioData = {
   volunteer: [
     {
       id: 1,
+      role: "Project Buddy",
+      organization: "Sistech Global",
+      duration: "10/2025 - Present",
+      location: "Remote",
+      description:
+        "Helping women to keep up with technology tools",
+    },
+    {
+      id: 1,
       role: "Social Media Manager",
       organization: "HackHarvard 2025",
-      duration: "9/2025 - 11/25",
+      duration: "9/2025",
       location: "Remote",
       description:
         "I designed Insta & Linkedin posts, stories, and reels to promote the event and engage participants.",
