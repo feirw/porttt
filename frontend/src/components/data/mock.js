@@ -107,7 +107,7 @@ export const portfolioData = {
     degree: "Bachelor in Computer Science",
     university: "National and Kapodistrian University of Athens",
     duration: "2024 - 2028",
-    gpa: "8.48/10",
+    gpa: "8.53/10",
     relevant_courses1: [
       "Programming Fundamentals",
       "Project Management",
