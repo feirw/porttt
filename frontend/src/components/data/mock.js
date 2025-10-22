@@ -67,7 +67,7 @@ export const portfolioData = {
       id: 1,
       company: "Threenitas",
       position: "Business Analyst & Project Manager Internship",
-      duration: "September 2025 - Present",
+      duration: "September 2025 - October 2025",
       location: "Hybrid, Athens, Greece",
       description:
         "Currently learning how to effectively lead the planning and execution of software projects, ensuring delivery on time and within budget.",
@@ -84,7 +84,7 @@ export const portfolioData = {
       description:
         "Maintaining and updating the website of an Asian Educational Center, ensuring optimal performance and user experience.",
       achievements: [
-        "Improved the website's performance and user experience through regular updates and optimizations.",
+        "Improved the website's performance and user experience through regular updates and SEOs.",
       ],
     },
     {
