@@ -6,4 +6,7 @@ How to run frontend:
 
 1. Go to the frontend directory
 2. Run `yarn install` to install dependencies
+
 3. Run `yarn run dev` to start the development server
+
+The link : https://elenizafeiri.netlify.app/
