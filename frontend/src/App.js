@@ -10,7 +10,6 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Certificates from "./components/Certificates";
 import Volunteer from "./components/Volunteer";
-import Gallery from "./components/Gallery";
 import { Toaster } from "./components/ui/toaster";
 
 const Home = () => {
@@ -23,7 +22,7 @@ const Home = () => {
       <Projects />
       <Certificates />
       <Volunteer />
-      <Gallery />
+    
       <Contact />
       <Footer />
     </div>
