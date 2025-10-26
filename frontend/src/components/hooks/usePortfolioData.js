@@ -71,11 +71,6 @@ export const useVolunteer = () => {
   return { volunteer: data, loading, error };
 }
 
-export const useGallery = () => {
-  const { data, loading, error } = useMockData(portfolioData.gallery);
-  return { photos: data, loading, error };
-}
-
 
 export const useContactForm = () => {
   const [submitting, setSubmitting] = useState(false);

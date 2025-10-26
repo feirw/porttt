@@ -148,7 +148,7 @@ const Navbar = () => {
                 className="flex items-center text-gray-300 hover:text-white px-3 py-2 transition-colors duration-300 hover:bg-gray-800 rounded-md w-full text-left"
               >
                 <Download className="w-5 h-5 mr-2" />
-                Download Resume
+                Download CV
               </button>
             </div>
           </div>
