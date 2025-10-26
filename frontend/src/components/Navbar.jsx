@@ -98,7 +98,7 @@ const Navbar = () => {
               onClick={() => window.open(getResumeUrl(), '_blank')}
             >
               <Download className="w-4 h-4 mr-2" />
-              Resume
+              CV
             </Button>
           </div>
 
