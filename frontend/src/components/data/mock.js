@@ -65,30 +65,6 @@ export const portfolioData = {
   experience: [
     {
       id: 1,
-      company: "Threenitas",
-      position: "Business Analyst & Project Manager Internship",
-      duration: "September 2025 - October 2025",
-      location: "Hybrid, Athens, Greece",
-      description:
-        "Currently learning how to effectively lead the planning and execution of software projects, ensuring delivery on time and within budget.",
-      achievements: [
-        "Improved onboarding process for trainees with structure notes and organized templates",
-      ],
-    },
-     {
-      id: 1,
-      company: "HongLong",
-      position: "Web Developer & Technical Support",
-      duration: "September 2025 - Present",
-      location: "Remote",
-      description:
-        "Maintaining and updating the website of an Asian Educational Center, ensuring optimal performance and user experience.",
-      achievements: [
-        "Improved the website's performance and user experience through regular updates and SEOs.",
-      ],
-    },
-    {
-      id: 2,
       company: "technotesgr",
       position: "Computer Science Tutor & Content Creator",
       duration: "Sept 2024 - Present",
@@ -101,6 +77,30 @@ export const portfolioData = {
         "Authored a book on programming basics for high school students.",
       ],
     },
+    {
+      id: 2,
+      company: "Threenitas",
+      position: "Business Analyst & Project Manager Internship",
+      duration: "September 2025 - October 2025",
+      location: "Hybrid, Athens, Greece",
+      description:
+        "Currently learning how to effectively lead the planning and execution of software projects, ensuring delivery on time and within budget.",
+      achievements: [
+        "Improved onboarding process for trainees with structure notes and organized templates",
+      ],
+    },
+     {
+      id: 3,
+      company: "HongLong",
+      position: "Web Developer & Technical Support",
+      duration: "September 2025 - Present",
+      location: "Remote",
+      description:
+        "Maintaining and updating the website of an Asian Educational Center, ensuring optimal performance and user experience.",
+      achievements: [
+        "Improved the website's performance and user experience through regular updates and SEOs.",
+      ],
+    }
   ],
 
   education: {
