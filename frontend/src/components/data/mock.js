@@ -3,7 +3,7 @@ export const portfolioData = {
   personal: {
     name: "Eleni Zafeiri",
     title: "Computer Science Student",
-    tagline: "Enthousiast about Technology and AI",
+    tagline: "Enthousiast about Technology,Constant Learning and Organization",
     bio: "I am a second-year student in the Department of Informatics and Telecommunications with a current GPA of 8.53/10. I graduated with honors from my high school (Grade: 19.7/20 & Panhellenic exams: 19.000/20.000). After living in a small village without any experience in technology and in just one year at university, I have participated in several hackathons, attended technology events, earned multiple certifications in technology and project management, volunteered in tech-related projects, and built a strong professional network. At the same time, I run a TikTok and Instagram account, where I provide guidance to high school students in Informatics. My goal is to keep growing, while also helping others develop and succeed in technology.",
     email: "elenzaff@icloud.com",
     location: "Athens, Greece",
@@ -18,11 +18,12 @@ export const portfolioData = {
   skills: {
     languages: ["C", "C#", "C++", "HTML", "CSS", "JS"],
     frameworks: ["React.js"," Tailwind CSS"],
+    concepts: ["Agile", "Scrum"],
     tools: ["GitHub", "VScode","Confluence", "Jira", "Ora", "Notion", "Asana"],
   },
 
   softskills: {
-    corporate: ["Teamwork", "Communication", "Adaptability","Problem-Solving","Time Management"],
+    corporate: ["Teamwork", "Communication", "Adaptability"]
   },
 
   projects: [
@@ -34,7 +35,6 @@ export const portfolioData = {
       technologies: ["HTML", "Tailwind CSS", "JavaScript", "Python", "React.js"],
       features: [
         "Interactive Quizzes",
-        "Online Courses",
         "Flashcards Mode",
         "Past Exam Papers",
         "Gamified Learning",
@@ -60,23 +60,6 @@ export const portfolioData = {
       demo_url: "#",
       status: "completed",
     },
-    {
-    "id": 3,
-    "title": "AthensGo: AI-Powered Personalized & Accessible City Tours",
-    "description":
-        "Full stack mobile application - Developed during the City of Athens Hackathon, AthensGo uses advanced AI (Reinforcement Learning) to instantly create optimized, multi-day routes based on user interests, dietary needs (allergies), and **100% mobility accessibility**. Our goal is inclusive, stress-free travel. I pitched the idea, managed the project, and implemented core logic.",
-    "technologies": ["React Native", "Tailwind CSS", "JavaScript", "Python (AI Backend)", "OpenStreetMaps API"],
-    "features": [
-        "AI Route Optimization (DQN Logic)",
-        "100% Accessibility Filter & Data Crowdsourcing",
-        "Local Guide/Agency Booking Platform",
-        "Gamification & Reward System"
-    ],
-    "github_url": "https://github.com/Apps4Athens-Hackathon-2-0/39_AthensGo",
-    "demo_url": "#",
-    "status": "completed"
-  },
-
   ],
 
   experience: [
@@ -101,7 +84,7 @@ export const portfolioData = {
       duration: "September 2025 - October 2025",
       location: "Hybrid, Athens, Greece",
       description:
-        "Learned how to effectively lead the planning and execution of software projects, ensuring delivery on time and within budget.",
+        "Currently learning how to effectively lead the planning and execution of software projects, ensuring delivery on time and within budget.",
       achievements: [
         "Improved onboarding process for trainees with structure notes and organized templates",
       ],
@@ -127,7 +110,7 @@ export const portfolioData = {
     gpa: "8.53/10",
     relevant_courses1: [
       "Programming Fundamentals",
-      "Artificial Intelligence",
+      "Project Management",
       "Data Structures and Algorithms",
       "Web Development",
       "Databases",
@@ -141,11 +124,10 @@ export const portfolioData = {
       "Technology",
     ],
     achievements1: [
-      "1st Place at 2nd Blue and Circular Economy Hackathon by Odyssea.(Hook & Grab project).",
+      "1st Place at 2nd Blue and Circular Economy Hackathon by Odyssea.",
       "Awarded by AUEB's competition ERMIS in Micro & Macro Economics.",
       "Semi Finalist at Business Hackathon Ennovation 2025 (AI-driven maritime consulting).",
       "Participated in Greece-Turkey Hackathon 2025 (step tracker app).",
-      "Participated in AI hackathon by Crowdpolicy (AthensGo app).",
     ],
     achievements2: [
       "Awarded by Eurobank for being in the top 1% of students in panhellenic exams (19.000/20.000).",
@@ -154,6 +136,15 @@ export const portfolioData = {
   },
 
   certificates: [
+    {
+      id: 2,
+      title: "McKinsey Forward Program",
+      issuer: "McKinsey & Company",
+      date: "10/2025-12/2025",
+      description: "Selected for McKinsey's prestigious Forward Program and I am currently studying for it",
+      link: "https://forward.mckinsey.com/",
+      certificatePdf: "/certificates/cur.pdf",
+    },
     {
       id: 3,
       title: "Project Management & AI Integrations",
