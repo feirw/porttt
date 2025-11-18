@@ -3,7 +3,7 @@ export const portfolioData = {
   personal: {
     name: "Eleni Zafeiri",
     title: "Computer Science Student",
-    tagline: "Enthousiast about Technology,Constant Learning and Organization",
+    tagline: "Enthousiast about Technology and AI",
     bio: "I am a second-year student in the Department of Informatics and Telecommunications with a current GPA of 8.53/10. I graduated with honors from my high school (Grade: 19.7/20 & Panhellenic exams: 19.000/20.000). After living in a small village without any experience in technology and in just one year at university, I have participated in several hackathons, attended technology events, earned multiple certifications in technology and project management, volunteered in tech-related projects, and built a strong professional network. At the same time, I run a TikTok and Instagram account, where I provide guidance to high school students in Informatics. My goal is to keep growing, while also helping others develop and succeed in technology.",
     email: "elenzaff@icloud.com",
     location: "Athens, Greece",
