@@ -160,7 +160,10 @@ const Projects = () => {
             className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
             onClick={() => setSelectedProject(null)}
           >
-        
+            <Card 
+              className="bg-gradient-to-br from-gray-900 to-black border-gray-600 max-w-2xl w-full max-h-[80vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-white mb-2">
                   {selectedProject.title}
@@ -218,6 +221,7 @@ const Projects = () => {
                   </div>
                 </div>
               </CardContent>
+            </Card>
             
           </div>
         )}
