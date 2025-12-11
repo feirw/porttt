@@ -32,7 +32,7 @@ export const portfolioData = {
       title: "Full Stack Tutor for Computer Science Students",
       description:
         "Currently developing a full-stack educational platform designed to support high school students in preparing for the Panhellenic exams in Informatics.It offers interactive quizzes, flashcards, past exam papers, gamified learning experiences, and study notes to enhance student engagement and learning outcomes.",
-      technologies: ["HTML", "Tailwind CSS", "JavaScript", "Python", "React.js"],
+      technologies: ["HTML", "Tailwind CSS", "Typescript", "Python", "React.js","JavaScript"],
       features: [
         "Interactive Quizzes",
         "Online Courses",
