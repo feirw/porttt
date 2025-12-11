@@ -106,22 +106,35 @@ const Projects = () => {
             </div>
           </div>
 
-          <div className="flex space-x-3">
-            <Button
-              size="sm"
-              variant="outline"
-              className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white flex-1 group-hover:border-gray-400 transition-all"
-              onClick={(e) => {
-                e.stopPropagation();
-                if (project.github_url) {
+          <div className="flex gap-3">
+            {project.github_url && (
+              <Button
+                size="sm"
+                variant="outline"
+                className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white flex-1 group-hover:border-gray-400 transition-all"
+                onClick={(e) => {
+                  e.stopPropagation();
                   window.open(project.github_url, '_blank');
-                }
-              }}
-              disabled={!project.github_url}
-            >
-              <Github className="w-4 h-4 mr-2" />
-              Code
-            </Button>
+                }}
+              >
+                <Github className="w-4 h-4 mr-2" />
+                Code
+              </Button>
+            )}
+            {project.demo_url && (
+              <Button
+                size="sm"
+                variant="outline"
+                className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white flex-1 group-hover:border-gray-400 transition-all"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(project.demo_url, '_blank');
+                }}
+              >
+                <ExternalLink className="w-4 h-4 mr-2" />
+                Demo
+              </Button>
+            )}
           </div>
         </CardContent>
 
