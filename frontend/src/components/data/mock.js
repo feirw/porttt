@@ -61,8 +61,7 @@ export const portfolioData = {
       demo_url: "#",
       status: "completed",
     },
-    
-    {
+  {
     id: 3,
     title: "AthensGo: AI-Powered Personalized & Accessible City Tours",
     description:
@@ -157,7 +156,18 @@ export const portfolioData = {
 
   certificates: [
     {
-      id: 3,
+      id: 0,
+      title: "Foundations of Prompt Engineering",
+      issuer: "Amazon Web Services (AWS)",
+      date: "12/2025",
+      description: "Learned how to make effective prompts for AI models.",
+      link: "https://www.aws.training/",
+      certificatePdf: "/certificates/prompt.pdf",
+
+    },
+    
+    {
+      id: 1,
       title: "Project Management & AI Integrations",
       issuer: "Workearly",
       date: "9/2025",
@@ -166,7 +176,7 @@ export const portfolioData = {
       certificatePdf: "/certificates/workearly.pdf",
     },
     {
-      id: 4,
+      id: 2,
       title: "Digital Literacy Awareness",
       issuer: "CISCO Networking Academy",
       date: "8/2025",
@@ -175,7 +185,7 @@ export const portfolioData = {
       certificatePdf: "/certificates/dig.pdf",
     },
     {
-      id: 6,
+      id: 3,
       title: "Cybersecurity Essentials",
       issuer: "Cisco Networking Academy",
       date: "7/2025",
@@ -184,7 +194,7 @@ export const portfolioData = {
       certificatePdf: "/certificates/cisco.pdf",
     },
     {
-      id: 8,
+      id: 4,
       title: "GenAI for Project Management & Sales",
       issuer: "The Tipping Point",
       date: "6/2025",
@@ -193,7 +203,7 @@ export const portfolioData = {
       certificatePdf: "/certificates/tip.pdf",
     },
     {
-      id: 9,
+      id: 5,
       title: "Effective Data Communication & Storytelling",
       issuer: "Deloitte",
       date: "1/2025",
@@ -202,7 +212,7 @@ export const portfolioData = {
       certificatePdf: "/certificates/deloite.pdf",
     },
     {
-      id: 10,
+      id: 6,
       title: "Team Leadership & Problem Solving Training",
       issuer: "Linq",
       date: "1/2025-5/2025",
