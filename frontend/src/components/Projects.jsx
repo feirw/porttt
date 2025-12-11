@@ -60,19 +60,19 @@ const Projects = () => {
     
     return (
       <Card 
-        className={`project-card bg-gradient-to-br from-gray-900/90 to-black/90 border-gray-700 hover:border-gray-500 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-white/20 group cursor-pointer backdrop-blur-sm h-full flex flex-col ${
+        className={`project-card bg-gradient-to-br from-gray-900/90 to-black/90 border-gray-700 hover:border-gray-500 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-white/20 group cursor-pointer backdrop-blur-sm ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
         style={{ transitionDelay: `${index * 200}ms` }}
         data-index={index}
         onClick={() => setSelectedProject(project)}
       >
-        <CardHeader className="pb-4 flex-shrink-0">
+        <CardHeader className="pb-4">
           <div className="flex items-start justify-between mb-2">
             <CardTitle className="text-xl font-bold text-white group-hover:text-gray-300 transition-colors">
               {project.title}
             </CardTitle>
-            <div className="flex space-x-2 flex-shrink-0">
+            <div className="flex space-x-2">
               {project.status === 'completed' ? (
                 <Zap className="w-5 h-5 text-green-400" />
               ) : (
@@ -86,12 +86,12 @@ const Projects = () => {
           </p>
         </CardHeader>
 
-        <CardContent className="pt-0 mt-auto flex-shrink-0">
+        <CardContent className="pt-0">
           <div className="mb-4">
             <div className="flex flex-wrap gap-2">
-              {project.technologies.slice(0, 4).map((tech, idx) => (
+              {project.technologies.slice(0, 4).map((tech) => (
                 <Badge 
-                  key={`${tech}-${idx}`}
+                  key={tech}
                   variant="secondary"
                   className="bg-gray-800 text-gray-300 hover:bg-gray-700 transition-colors text-xs"
                 >
@@ -106,35 +106,19 @@ const Projects = () => {
             </div>
           </div>
 
-          <div className="flex gap-3">
-            {project.github_url && (
-              <Button
-                size="sm"
-                variant="outline"
-                className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white flex-1 group-hover:border-gray-400 transition-all"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  window.open(project.github_url, '_blank');
-                }}
-              >
-                <Github className="w-4 h-4 mr-2" />
-                Code
-              </Button>
-            )}
-            {project.demo_url && (
-              <Button
-                size="sm"
-                variant="outline"
-                className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white flex-1 group-hover:border-gray-400 transition-all"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  window.open(project.demo_url, '_blank');
-                }}
-              >
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Demo
-              </Button>
-            )}
+          <div className="flex space-x-3">
+            <Button
+              size="sm"
+              variant="outline"
+              className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white flex-1 group-hover:border-gray-400 transition-all"
+              onClick={(e) => {
+                e.stopPropagation();
+                window.open(project.github_url, '_blank');
+              }}
+            >
+              <Github className="w-4 h-4 mr-2" />
+              Code
+            </Button>
           </div>
         </CardContent>
 
@@ -145,12 +129,12 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" ref={sectionRef} className="py-20 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden min-h-screen">
+    <section id="projects" ref={sectionRef} className="py-20 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
       {/* Background Animation */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-gray-600 to-transparent animate-pulse"></div>
-        <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-gray-600 to-transparent animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-gray-600 to-transparent animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent animate-pulse delay-500"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -164,7 +148,7 @@ const Projects = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-gray-600 to-white mx-auto mt-4"></div>
         </div>
 
-        <div className="flex flex-col gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
@@ -195,9 +179,9 @@ const Projects = () => {
                     <h4 className="text-white font-semibold mb-3">Key Features</h4>
                     <ul className="space-y-2">
                       {selectedProject.features.map((feature, index) => (
-                        <li key={index} className="text-gray-300 flex items-start">
-                          <div className="w-2 h-2 bg-white rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                          <span>{feature}</span>
+                        <li key={index} className="text-gray-300 flex items-center">
+                          <div className="w-2 h-2 bg-white rounded-full mr-3"></div>
+                          {feature}
                         </li>
                       ))}
                     </ul>
@@ -206,9 +190,9 @@ const Projects = () => {
                   <div>
                     <h4 className="text-white font-semibold mb-3">Technologies Used</h4>
                     <div className="flex flex-wrap gap-2">
-                      {selectedProject.technologies.map((tech, idx) => (
+                      {selectedProject.technologies.map((tech) => (
                         <Badge 
-                          key={`${tech}-${idx}`}
+                          key={tech}
                           variant="secondary"
                           className="bg-gray-800 text-gray-300"
                         >
@@ -218,29 +202,22 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                    {selectedProject.github_url && (
-                      <Button
-                        className="bg-white text-black hover:bg-gray-200 flex-1"
-                        onClick={() => window.open(selectedProject.github_url, '_blank')}
-                      >
-                        <Github className="w-4 h-4 mr-2" />
-                        View Code
-                      </Button>
-                    )}
-                    {selectedProject.demo_url && (
-                      <Button
-                        variant="outline"
-                        className="border-gray-600 text-gray-300 hover:bg-gray-800 flex-1"
-                        onClick={() => window.open(selectedProject.demo_url, '_blank')}
-                      >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Live Demo
-                      </Button>
-                    )}
-                    {!selectedProject.github_url && !selectedProject.demo_url && (
-                      <p className="text-gray-400 text-sm text-center">No links available</p>
-                    )}
+                  <div className="flex space-x-4 pt-4">
+                    <Button
+                      className="bg-white text-black hover:bg-gray-200 flex-1"
+                      onClick={() => window.open(selectedProject.github_url, '_blank')}
+                    >
+                      <Github className="w-4 h-4 mr-2" />
+                      View Code
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="border-gray-600 text-gray-300 hover:bg-gray-800 flex-1"
+                      onClick={() => window.open(selectedProject.demo_url, '_blank')}
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Live Demo
+                    </Button>
                   </div>
                 </div>
               </CardContent>
