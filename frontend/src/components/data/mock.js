@@ -65,7 +65,7 @@ export const portfolioData = {
       id: 3,
       title: "AthensGo: AI-Powered Personalized & Accessible City Tours",
       description:
-        "Full stack mobile application - Developed during the City of Athens Hackathon, AthensGo uses advanced AI (Reinforcement Learning) to instantly create optimized, multi-day routes based on user interests, dietary needs (allergies), and 100% mobility accessibility. Our goal is inclusive, stress-free travel. I pitched the idea, managed the project, and implemented core logic.",
+        "Full stack mobile application - Developed during the City of Athens Hackathon, AthensGo uses AI to generate city paths for tourists in Athens",
       technologies: ["React Native", "Tailwind CSS", "JavaScript", "Python (AI Backend)", "OpenStreetMaps API"],
       features: [
         "AI Route Optimization (DQN Logic)",
