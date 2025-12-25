@@ -45,38 +45,38 @@ export const portfolioData = {
       demo_url: "#",
       status: "in progress",
     },
-    {
-      id: 2,
-      title: "Hook & Grab: Online Marketplace for Second-Hand Fishing Gear",
-      description:
-        "Full stack website - My team and I built an online marketplace where amateur fishers can buy and sell second-hand fishing gear, promoting sustainability and resource reuse. Developed during the 2nd Blue and Circular Economy Hackathon (1st place). I also pitched the idea and managed the project.",
-      technologies: ["Figma", "HTML", "CSS", "Python", "React.js"],
-      features: [
-        "User authentication",
-        "Product listings",
-        "Search and filter",
-        "Secure payments",
-      ],
-      github_url: "https://github.com/feirw/hook-and-grab",
-      demo_url: "#",
-      status: "completed",
-    },
-  {
-    id: 3,
-    title: "AthensGo: AI-Powered Personalized & Accessible City Tours",
-    description:
-        "Full stack mobile application - Developed during the City of Athens Hackathon, AthensGo uses advanced AI (Reinforcement Learning) to instantly create optimized, multi-day routes based on user interests, dietary needs (allergies), and **100% mobility accessibility**. Our goal is inclusive, stress-free travel. I pitched the idea, managed the project, and implemented core logic.",
-    technologies: ["React Native", "Tailwind CSS", "JavaScript", "Python (AI Backend)", "OpenStreetMaps API"],
-    features: [
-        "AI Route Optimization (DQN Logic)",
-        "100% Accessibility Filter & Data Crowdsourcing",
-        "Local Guide/Agency Booking Platform",
-        "Gamification & Reward System"
-    ],
-    github_url: "https://github.com/Apps4Athens-Hackathon-2-0/39_AthensGo",
-    demo_url: "#",
-    status: "completed"
-  },
+  //   {
+  //     id: 2,
+  //     title: "Hook & Grab: Online Marketplace for Second-Hand Fishing Gear",
+  //     description:
+  //       "Full stack website - My team and I built an online marketplace where amateur fishers can buy and sell second-hand fishing gear, promoting sustainability and resource reuse. Developed during the 2nd Blue and Circular Economy Hackathon (1st place). I also pitched the idea and managed the project.",
+  //     technologies: ["Figma", "HTML", "CSS", "Python", "React.js"],
+  //     features: [
+  //       "User authentication",
+  //       "Product listings",
+  //       "Search and filter",
+  //       "Secure payments",
+  //     ],
+  //     github_url: "https://github.com/feirw/hook-and-grab",
+  //     demo_url: "#",
+  //     status: "completed",
+  //   },
+  // {
+  //   id: 3,
+  //   title: "AthensGo: AI-Powered Personalized & Accessible City Tours",
+  //   description:
+  //       "Full stack mobile application - Developed during the City of Athens Hackathon, AthensGo uses advanced AI (Reinforcement Learning) to instantly create optimized, multi-day routes based on user interests, dietary needs (allergies), and **100% mobility accessibility**. Our goal is inclusive, stress-free travel. I pitched the idea, managed the project, and implemented core logic.",
+  //   technologies: ["React Native", "Tailwind CSS", "JavaScript", "Python (AI Backend)", "OpenStreetMaps API"],
+  //   features: [
+  //       "AI Route Optimization (DQN Logic)",
+  //       "100% Accessibility Filter & Data Crowdsourcing",
+  //       "Local Guide/Agency Booking Platform",
+  //       "Gamification & Reward System"
+  //   ],
+  //   github_url: "https://github.com/Apps4Athens-Hackathon-2-0/39_AthensGo",
+  //   demo_url: "#",
+  //   status: "completed"
+  // },
 
   ],
 
