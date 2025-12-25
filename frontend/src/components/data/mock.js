@@ -45,22 +45,22 @@ export const portfolioData = {
       demo_url: "#",
       status: "in progress",
     },
-  //   {
-  //     id: 2,
-  //     title: "Hook & Grab: Online Marketplace for Second-Hand Fishing Gear",
-  //     description:
-  //       "Full stack website - My team and I built an online marketplace where amateur fishers can buy and sell second-hand fishing gear, promoting sustainability and resource reuse. Developed during the 2nd Blue and Circular Economy Hackathon (1st place). I also pitched the idea and managed the project.",
-  //     technologies: ["Figma", "HTML", "CSS", "Python", "React.js"],
-  //     features: [
-  //       "User authentication",
-  //       "Product listings",
-  //       "Search and filter",
-  //       "Secure payments",
-  //     ],
-  //     github_url: "https://github.com/feirw/hook-and-grab",
-  //     demo_url: "#",
-  //     status: "completed",
-  //   },
+    {
+      id: 2,
+      title: "Hook & Grab: Online Marketplace for Second-Hand Fishing Gear",
+      description:
+        "Full stack website - My team and I built an online marketplace where amateur fishers can buy and sell second-hand fishing gear, promoting sustainability and resource reuse. Developed during the 2nd Blue and Circular Economy Hackathon (1st place). I also pitched the idea and managed the project.",
+      technologies: ["Figma", "HTML", "CSS", "Python", "React.js"],
+      features: [
+        "User authentication",
+        "Product listings",
+        "Search and filter",
+        "Secure payments",
+      ],
+      github_url: "https://github.com/feirw/hook-and-grab",
+      demo_url: "#",
+      status: "completed",
+    },
   // {
   //   id: 3,
   //   title: "AthensGo: AI-Powered Personalized & Accessible City Tours",
