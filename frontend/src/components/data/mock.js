@@ -3,7 +3,7 @@ export const portfolioData = {
   personal: {
     name: "Eleni Zafeiri",
     title: "Computer Science Student",
-    tagline: "Enthusiast about Technology and AI",
+    tagline: "Enthousiast about Technology and AI",
     bio: "I am a second-year student in the Department of Informatics and Telecommunications with a current GPA of 8.53/10. I graduated with honors from my high school (Grade: 19.7/20 & Panhellenic exams: 19.000/20.000). After living in a small village without any experience in technology and in just one year at university, I have participated in several hackathons, attended technology events, earned multiple certifications in technology and project management, volunteered in tech-related projects, and built a strong professional network. At the same time, I run a TikTok and Instagram account, where I provide guidance to high school students in Informatics. My goal is to keep growing, while also helping others develop and succeed in technology.",
     email: "elenzaff@icloud.com",
     location: "Athens, Greece",
@@ -11,19 +11,19 @@ export const portfolioData = {
     social_links: {
       github: "https://github.com/feirw",
       linkedin: "https://linkedin.com/in/elenizafeiri",
-      instagram: "https://instagram.com/technotesgr",
+      instagram : "https://instagram.com/technotesgr",
     },
   },
 
   skills: {
     languages: ["C", "C#", "C++", "HTML", "CSS", "JS"],
-    frameworks: ["React.js", "Tailwind CSS"],
+    frameworks: ["React.js"," Tailwind CSS"],
     concepts: ["OOP", "Data Structures", "Algorithms", "Databases", "Web Development"],
-    tools: ["GitHub", "VScode", "Confluence", "Jira", "Ora", "Notion", "Asana"],
+    tools: ["GitHub", "VScode","Confluence", "Jira", "Ora", "Notion", "Asana"],
   },
 
   softskills: {
-    corporate: ["Teamwork", "Communication", "Adaptability", "Problem-Solving", "Time Management"],
+    corporate: ["Teamwork", "Communication", "Adaptability","Problem-Solving","Time Management"],
   },
 
   projects: [
@@ -31,8 +31,8 @@ export const portfolioData = {
       id: 1,
       title: "Full Stack Tutor for Computer Science Students",
       description:
-        "Currently developing a full-stack educational platform designed to support high school students in preparing for the Panhellenic exams in Informatics. It offers interactive quizzes, flashcards, past exam papers, gamified learning experiences, and study notes to enhance student engagement and learning outcomes.",
-      technologies: ["HTML", "Tailwind CSS", "TypeScript", "Python", "React.js", "JavaScript"],
+        "Currently developing a full-stack educational platform designed to support high school students in preparing for the Panhellenic exams in Informatics.It offers interactive quizzes, flashcards, past exam papers, gamified learning experiences, and study notes to enhance student engagement and learning outcomes.",
+      technologies: ["HTML", "Tailwind CSS", "Typescript", "Python", "React.js","JavaScript"],
       features: [
         "Interactive Quizzes",
         "Online Courses",
@@ -61,22 +61,23 @@ export const portfolioData = {
       demo_url: "#",
       status: "completed",
     },
-    {
-      id: 3,
-      title: "AthensGo: AI-Powered Personalized & Accessible City Tours",
-      description:
-        "Full stack mobile application - Developed during the City of Athens Hackathon, AthensGo uses AI to generate city paths for tourists in Athens",
-      technologies: ["React Native", "Tailwind CSS", "JavaScript", "Python (AI Backend)", "OpenStreetMaps API"],
-      features: [
+  {
+    id: 3,
+    title: "AthensGo: AI-Powered Personalized & Accessible City Tours",
+    description:
+        "Full stack mobile application - Developed during the City of Athens Hackathon, AthensGo uses advanced AI (Reinforcement Learning) to instantly create optimized, multi-day routes based on user interests, dietary needs (allergies), and **100% mobility accessibility**. Our goal is inclusive, stress-free travel. I pitched the idea, managed the project, and implemented core logic.",
+    technologies: ["React Native", "Tailwind CSS", "JavaScript", "Python (AI Backend)", "OpenStreetMaps API"],
+    features: [
         "AI Route Optimization (DQN Logic)",
         "100% Accessibility Filter & Data Crowdsourcing",
         "Local Guide/Agency Booking Platform",
-        "Gamification & Reward System",
-      ],
-      github_url: "https://github.com/Apps4Athens-Hackathon-2-0/39_AthensGo",
-      demo_url: "#",
-      status: "completed",
-    },
+        "Gamification & Reward System"
+    ],
+    github_url: "https://github.com/Apps4Athens-Hackathon-2-0/39_AthensGo",
+    demo_url: "#",
+    status: "completed"
+  },
+
   ],
 
   experience: [
@@ -103,10 +104,10 @@ export const portfolioData = {
       description:
         "Learned how to effectively lead the planning and execution of software projects, ensuring delivery on time and within budget.",
       achievements: [
-        "Improved onboarding process for trainees with structured notes and organized templates",
+        "Improved onboarding process for trainees with structure notes and organized templates",
       ],
     },
-    {
+     {
       id: 3,
       company: "HongLong",
       position: "Web Developer & Technical Support",
@@ -117,7 +118,7 @@ export const portfolioData = {
       achievements: [
         "Improved the website's performance and user experience through regular updates and SEOs.",
       ],
-    },
+    }
   ],
 
   education: {
@@ -141,7 +142,7 @@ export const portfolioData = {
       "Technology",
     ],
     achievements1: [
-      "1st Place at 2nd Blue and Circular Economy Hackathon by Odyssea (Hook & Grab project).",
+      "1st Place at 2nd Blue and Circular Economy Hackathon by Odyssea.(Hook & Grab project).",
       "Awarded by AUEB's competition ERMIS in Micro & Macro Economics.",
       "Semi Finalist at Business Hackathon Ennovation 2025 (AI-driven maritime consulting).",
       "Participated in Greece-Turkey Hackathon 2025 (step tracker app).",
@@ -162,7 +163,9 @@ export const portfolioData = {
       description: "Learned how to make effective prompts for AI models.",
       link: "https://www.aws.training/",
       certificatePdf: "/certificates/prompt.pdf",
+
     },
+    
     {
       id: 1,
       title: "Project Management & AI Integrations",
@@ -186,7 +189,7 @@ export const portfolioData = {
       title: "Cybersecurity Essentials",
       issuer: "Cisco Networking Academy",
       date: "7/2025",
-      description: "Learned about malware, protocols, networking and security.",
+      description: "Learned about malware,protocols,networking and security.",
       link: "https://www.netacad.com/",
       certificatePdf: "/certificates/cisco.pdf",
     },
@@ -226,49 +229,65 @@ export const portfolioData = {
       organization: "Sistech Global",
       duration: "10/2025 - Present",
       location: "Remote",
-      description: "Helping women to keep up with technology tools",
+      description:
+        "Helping women to keep up with technology tools",
     },
     {
-      id: 2,
+      id: 1,
       role: "Social Media Manager",
       organization: "HackHarvard 2025",
       duration: "9/2025",
       location: "Remote",
-      description: "I designed Insta & Linkedin posts, stories, and reels to promote the event and engage participants.",
+      description:
+        "I designed Insta & Linkedin posts, stories, and reels to promote the event and engage participants.",
     },
     {
-      id: 3,
+      id: 2,
       role: "Volunteer for Technology Events",
       organization: "WeLead",
       duration: "3/2025 - Present",
       location: "On-site",
-      description: "Assisting in organizing and managing tech events aimed at empowering women in Technology.",
+      description:
+        "Assisting in organizing and managing tech events aimed at empowering women in Technology.",
+     
     },
     {
-      id: 4,
+      id: 3,
       role: "Main Stage Support",
-      organization: "Talent Days 2025 by Linq",
+      organization: "Talent Days 2025 by Linq",  
       duration: "4/2025",
       location: "On-site",
-      description: "Assisted in managing the main stage, coordinating speakers, and ensuring smooth transitions between sessions.",
+      description:
+        "Assisted in managing the main stage, coordinating speakers, and ensuring smooth transitions between sessions.",
     },
     {
-      id: 5,
+      id: 3,
       role: "Hackathon Coordinator & Mentor",
-      organization: "Texas A&M University Hackathon",
+      organization: "Texas A&M University Hackathon",  
       duration: "2/2025",
       location: "On-site",
-      description: "Planed the event, made the time schedule, designed the posts for social media, and mentored participants during the hackathon. The event was hosted by UoA and Texas A&M University in Athens.",
+      description:
+        "Planed the event,made the time schedule, designed the posts for social media, and mentored participants during the hackathon.The event was hosted by UoA and Texas A&M University in Athens.",
     },
     {
-      id: 6,
+      id: 3,
       role: "Project Manager & Mentor",
-      organization: "DIT Coding Club",
+      organization: "DIT Coding Club",  
       duration: "12/2024 - Present",
       location: "Hybrid",
-      description: "My team and I organize events and hackathons in the Department of Informatics and Telecommunications of University of Athens, mentor students on their projects, and help them develop their technical and teamwork skills.",
+      description:
+        "My team and I organize events and hackathons in the Department of Informatics and Telecommunications of University of Athens, mentor students on their projects, and help them develop their technical and teamwork skills.",
     },
   ],
-};
 
+  photos : [ 
+    {
+      url: "/photos/123.jpg",
+      title: "HackHarvard 2025",
+      description: "Volunteering as Social Media Manager for HackHarvard 2025.",
+      tag : "volunteer"
+    },
+  
+  ]
+};  
 export default portfolioData;
