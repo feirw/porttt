@@ -14,22 +14,31 @@ const Projects = () => {
   const { projects, loading, error } = useProjects();
 
   useEffect(() => {
+    if (!projects || projects.length === 0) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const index = parseInt(entry.target.dataset.index);
-            setVisibleCards(prev => new Set([...prev, index]));
+            if (!isNaN(index)) {
+              setVisibleCards(prev => new Set([...prev, index]));
+            }
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.1, rootMargin: '50px' }
     );
 
-    const cards = document.querySelectorAll('.project-card');
-    cards.forEach(card => observer.observe(card));
+    const timer = setTimeout(() => {
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => observer.observe(card));
+    }, 100);
 
-    return () => observer.disconnect();
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
   }, [projects]);
 
   if (loading) {
@@ -60,10 +69,10 @@ const Projects = () => {
     
     return (
       <Card 
-        className={`project-card bg-gradient-to-br from-gray-900/90 to-black/90 border-gray-700 hover:border-gray-500 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-white/20 group cursor-pointer backdrop-blur-sm ${
+        className={`project-card bg-gradient-to-br from-gray-900/90 to-black/90 border-gray-700 hover:border-gray-500 transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl hover:shadow-white/20 group cursor-pointer backdrop-blur-sm ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
-        style={{ transitionDelay: `${index * 200}ms` }}
+        style={{ transitionDelay: `${index * 150}ms` }}
         data-index={index}
         onClick={() => setSelectedProject(project)}
       >
@@ -148,7 +157,8 @@ const Projects = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-gray-600 to-white mx-auto mt-4"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        {/* Vertical stack layout - one below another */}
+        <div className="flex flex-col gap-6 max-w-4xl mx-auto">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
@@ -222,7 +232,6 @@ const Projects = () => {
                 </div>
               </CardContent>
             </Card>
-            
           </div>
         )}
       </div>
@@ -230,4 +239,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Projects;3
