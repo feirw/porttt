@@ -1,111 +1,181 @@
-import React from 'react';
-import { ArrowDown, Github, Linkedin, Instagram } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
 import { Button } from './ui/button';
-import { portfolioData } from '../data/mockData';
+import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
+import { usePersonalInfo } from './hooks/usePortfolioData';
+import LoadingSpinner from './LoadingSpinner';
+import ErrorMessage from './ErrorMessage';
 
 const Hero = () => {
-  const { personal } = portfolioData;
+  const { personalInfo, loading, error } = usePersonalInfo();
+  const heroRef = useRef(null);
+  const textRef = useRef(null);
 
-  const scrollToAbout = () => {
-    const element = document.querySelector('#about');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY;
+      const hero = heroRef.current;
+      const text = textRef.current;
+      
+      if (hero && text) {
+        // Parallax effect on background
+        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        // Fade out text as user scrolls
+        text.style.opacity = Math.max(0, 1 - scrolled / 500);
+        text.style.transform = `translateY(${scrolled * 0.3}px)`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToNext = () => {
+    const aboutSection = document.getElementById('about');
+    aboutSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  if (loading) {
+    return (
+      <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black">
+        <LoadingSpinner size="large" text="Loading portfolio..." />
+      </section>
+    );
+  }
+
+  if (error || !personalInfo) {
+    return (
+      <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black">
+        <ErrorMessage 
+          message={error || "Failed to load personal information"} 
+          onRetry={() => window.location.reload()} 
+        />
+      </section>
+    );
+  }
+
   return (
-    <section
-      id="hero"
-      className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden"
-    >
-      {/* Animated Background Lines */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
+      <div 
+        ref={heroRef}
+        className="absolute inset-0 bg-grid-pattern opacity-20"
+        style={{
+          backgroundImage: `radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 50%), 
+                           radial-gradient(circle at 75% 75%, rgba(255,255,255,0.05) 0%, transparent 50%)`
+        }}
+      />
+      
+      {/* Animated background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-gray-700/50 to-transparent animate-pulse" />
-        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-gray-700/30 to-transparent animate-pulse delay-700" />
-        <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-gray-700/50 to-transparent animate-pulse delay-1000" />
-        <div className="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-700/30 to-transparent animate-pulse delay-500" />
-      </div>
-
-      {/* Gradient Orbs */}
-      <div className="absolute top-20 right-20 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-20 w-80 h-80 bg-gray-500/10 rounded-full blur-3xl" />
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="text-center">
-          {/* Greeting */}
-          <p className="text-gray-400 text-sm tracking-[0.3em] uppercase mb-6 animate-fade-in">
-            Hello, I'm
-          </p>
-
-          {/* Name */}
-          <h1 className="font-bold text-5xl md:text-7xl lg:text-8xl text-white mb-6 tracking-tight">
-            {personal.name}
-          </h1>
-
-          {/* Title */}
-          <h2 className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-4 font-light">
-            {personal.title}
-          </h2>
-
-          {/* Tagline */}
-          <p className="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto mb-10">
-            {personal.tagline}
-          </p>
-
-          {/* Social Links */}
-          <div className="flex items-center justify-center gap-6 mb-12">
-            <a
-              href={personal.social_links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full"
-            >
-              <Github size={24} />
-            </a>
-            <a
-              href={personal.social_links.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full"
-            >
-              <Linkedin size={24} />
-            </a>
-            <a
-              href={personal.social_links.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full"
-            >
-              <Instagram size={24} />
-            </a>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button
-              onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-white text-black hover:bg-gray-200 rounded-full px-8 py-6 text-sm font-medium transition-all"
-            >
-              View My Work
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border-gray-600 text-gray-300 hover:bg-white/10 hover:text-white rounded-full px-8 py-6 text-sm font-medium transition-all"
-            >
-              Contact Me
-            </Button>
-          </div>
+        <div className="floating-code-1 absolute top-20 left-10 text-gray-600 font-mono text-sm opacity-30 animate-pulse">
+          {`{ "status": "coding" }`}
+        </div>
+        <div className="floating-code-2 absolute top-40 right-20 text-gray-600 font-mono text-sm opacity-30 animate-pulse delay-1000">
+          while(true) learn();
+        </div>
+        <div className="floating-code-3 absolute bottom-40 left-20 text-gray-600 font-mono text-sm opacity-30 animate-pulse delay-2000">
+          const future = await build();
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <button
-        onClick={scrollToAbout}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-400 hover:text-white transition-colors animate-bounce"
-      >
-        <ArrowDown size={24} />
-      </button>
+      <div ref={textRef} className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+        <div className="mb-8 animate-fade-in">
+          <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent mb-6 tracking-tight">
+            {personalInfo.name}
+          </h1>
+          
+          {/* Typewriter effect for title */}
+          <div className="text-2xl md:text-3xl text-gray-300 mb-4 font-light">
+            <span className="inline-block animate-typewriter">
+              {personalInfo.title}
+            </span>
+          </div>
+          
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            {personalInfo.tagline}
+          </p>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <Button 
+            className="bg-white text-black hover:bg-gray-200 px-8 py-4 text-lg font-semibold transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-white/20"
+            onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
+          >
+            View My Work
+          </Button>
+          
+          <Button 
+            variant="outline" 
+            className="border-gray-400 text-gray-300 hover:bg-gray-800 hover:text-white px-8 py-4 text-lg transform hover:scale-105 transition-all duration-300"
+            onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+          >
+            Get In Touch
+          </Button>
+        </div>
+
+        {/* Social Links */}
+        <div className="flex justify-center space-x-6 mb-12">
+          <a 
+            href={personalInfo.social_links.github}
+            className="p-3 rounded-full bg-gray-800/50 hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 hover:rotate-12"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Github className="w-6 h-6 text-gray-300" />
+          </a>
+          <a 
+            href={personalInfo.social_links.linkedin}
+            className="p-3 rounded-full bg-gray-800/50 hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 hover:rotate-12"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Linkedin className="w-6 h-6 text-gray-300" />
+          </a>
+          <a 
+            href={`mailto:${personalInfo.email}`}
+            className="p-3 rounded-full bg-gray-800/50 hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 hover:rotate-12"
+          >
+            <Mail className="w-6 h-6 text-gray-300" />
+          </a>
+        </div>
+
+        {/* Scroll indicator */}
+        <div 
+          className="absolute bottom-2 left-1/2 transform -translate-x-1/2 cursor-pointer animate-bounce"
+          onClick={scrollToNext}
+        >
+          
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes fade-in {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes typewriter {
+          from { width: 0; }
+          to { width: 100%; }
+        }
+        
+        .animate-fade-in {
+          animation: fade-in 1s ease-out;
+        }
+        
+        .animate-typewriter {
+          overflow: hidden;
+          border-right: 2px solid white;
+          white-space: nowrap;
+          animation: typewriter 3s steps(40) 1s both;
+        }
+        
+        .bg-grid-pattern {
+          background-image: 
+            linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+          background-size: 50px 50px;
+        }
+      `}</style>
     </section>
   );
 };
