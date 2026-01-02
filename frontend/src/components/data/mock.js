@@ -16,14 +16,13 @@ export const portfolioData = {
   },
 
   skills: {
-    languages: ["C", "C#", "C++", "HTML", "CSS", "JS"],
+    languages: ["C","C++", "HTML", "CSS", "JS"],
     frameworks: ["React.js"," Tailwind CSS"],
-    concepts: ["OOP", "Data Structures", "Algorithms", "Databases", "Web Development"],
-    tools: ["GitHub", "VScode","Confluence", "Jira", "Ora", "Notion", "Asana"],
+    concepts: ["AI Prompting", "Product Management","Web Development"],
   },
 
   softskills: {
-    corporate: ["Teamwork", "Communication", "Adaptability","Problem-Solving","Time Management"],
+    corporate: ["Teamwork", "Communication", "Creativity","Problem-Solving","Passion"],
   },
 
   projects: [
@@ -38,8 +37,7 @@ export const portfolioData = {
         "Online Courses",
         "Flashcards Mode",
         "Past Exam Papers",
-        "Gamified Learning",
-        "Study Notes & Annotations",
+        "Universities",
       ],
       github_url: "https://github.com/feirw/technotesgr",
       demo_url: "#",
@@ -50,7 +48,7 @@ export const portfolioData = {
       title: "Hook & Grab: Online Marketplace for Second-Hand Fishing Gear",
       description:
         "Full stack website - My team and I built an online marketplace where amateur fishers can buy and sell second-hand fishing gear, promoting sustainability and resource reuse. Developed during the 2nd Blue and Circular Economy Hackathon (1st place). I also pitched the idea and managed the project.",
-      technologies: ["Figma", "HTML", "CSS", "Python", "React.js"],
+      technologies: ["HTML", "CSS", "Python", "React.js"],
       features: [
         "User authentication",
         "Product listings",
@@ -127,11 +125,10 @@ export const portfolioData = {
     duration: "2024 - 2028",
     gpa: "8.53/10",
     relevant_courses1: [
-      "Programming Fundamentals",
+      "Computer Fundamentals",
       "Artificial Intelligence",
-      "Data Structures and Algorithms",
+      "Project & Product Management",
       "Web Development",
-      "Databases",
       "Object-Oriented Programming",
     ],
     relevant_courses2: [
