@@ -150,7 +150,7 @@ const About = () => {
                     Tools & Concepts
                   </h4>
                   <div className="flex flex-wrap gap-2">
-                    {[...skills.tools, ...skills.concepts].map((skill, index) => (
+                    {[...skills.concepts].map((skill, index) => (
                       <Badge 
                         key={skill} 
                         variant="secondary" 
