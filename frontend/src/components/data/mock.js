@@ -105,18 +105,7 @@ export const portfolioData = {
         "Improved onboarding process for trainees with structure notes and organized templates",
       ],
     },
-     {
-      id: 3,
-      company: "HongLong",
-      position: "Web Developer & Technical Support",
-      duration: "September 2025 - Present",
-      location: "Remote",
-      description:
-        "Maintaining and updating the website of an Asian Educational Center, ensuring optimal performance and user experience.",
-      achievements: [
-        "Improved the website's performance and user experience through regular updates and SEOs.",
-      ],
-    }
+   
   ],
 
   education: {
@@ -224,7 +213,7 @@ export const portfolioData = {
       id: 1,
       role: "Project Buddy",
       organization: "Sistech Global",
-      duration: "10/2025 - Present",
+      duration: "10/2025 - 12/2025",
       location: "Remote",
       description:
         "Helping women to keep up with technology tools",
@@ -242,7 +231,7 @@ export const portfolioData = {
       id: 2,
       role: "Volunteer for Technology Events",
       organization: "WeLead",
-      duration: "3/2025 - Present",
+      duration: "3/2025 - 8/2025",
       location: "On-site",
       description:
         "Assisting in organizing and managing tech events aimed at empowering women in Technology.",
