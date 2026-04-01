@@ -8,9 +8,13 @@ const LoadingSpinner = ({ size = 'medium', text = 'Loading...' }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center space-y-4 py-8">
-      <div className={`${sizeClasses[size]} animate-spin rounded-full border-2 border-gray-600 border-t-white`}>
-      </div>
+    <div
+      className="flex flex-col items-center justify-center space-y-4 py-8"
+      role="status"
+      aria-live="polite"
+      aria-busy="true"
+    >
+      <div className={`${sizeClasses[size]} animate-spin rounded-full border-2 border-gray-600 border-t-white motion-reduce:animate-none`} aria-hidden />
       {text && (
         <p className="text-gray-400 text-sm font-medium">{text}</p>
       )}

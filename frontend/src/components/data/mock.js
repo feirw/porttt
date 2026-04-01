@@ -1,124 +1,124 @@
-// Mock data for CS student portfolio
+// Portfolio data aligned with CV (Eleni Zafeiri)
 export const portfolioData = {
   personal: {
     name: "Eleni Zafeiri",
-    title: "Computer Science Student",
-    tagline: "Enthousiast about Technology and AI",
-    bio: "I am a second-year student in the Department of Informatics and Telecommunications with a current GPA of 8.53/10. I graduated with honors from my high school (Grade: 19.7/20 & Panhellenic exams: 19.000/20.000). After living in a small village without any experience in technology and in just one year at university, I have participated in several hackathons, attended technology events, earned multiple certifications in technology and project management, volunteered in tech-related projects, and built a strong professional network. At the same time, I run a TikTok and Instagram account, where I provide guidance to high school students in Informatics. My goal is to keep growing, while also helping others develop and succeed in technology.",
+    title: "Computer Science Student & Product Owner",
+    tagline:
+      "Athens · BSc Computer Science (NKUA) · Product Owner & builder · Web, WordPress, coordination",
+    bio: "Undergraduate in Computer Science at the National and Kapodistrian University of Athens (GPA 8.54/10). At HongLong I started as a Web Developer (Sep 2025) and was promoted to Product Owner (Feb 2026), owning prioritization and stakeholder alignment while maintaining the educational WordPress platform. I completed a Project Manager internship at Threenitas, translating business needs into clear specs for engineering teams. I have coordinated hackathons and tech events (e.g. DiT Coding Club, Texas A&M × UoA), volunteered with Sistech Global and WELEAD, and shipped projects such as Hook & Grab (1st place) and a CS learning platform used by 50+ students. I care about clear delivery, accessibility-minded product thinking, and helping others grow in tech. C2 English, B2 French, native Greek.",
     email: "elenzaff@icloud.com",
+    phone: "+30 698 342 6662",
     location: "Athens, Greece",
     resume_url: "/resume.pdf",
+    spoken_languages: [
+      "English (C2: ECPE, LRN) — fluent",
+      "French (B2: DELF) — fluent",
+      "Greek — native",
+    ],
     social_links: {
       github: "https://github.com/feirw",
-      linkedin: "https://linkedin.com/in/elenizafeiri",
-      instagram : "https://instagram.com/technotesgr",
+      linkedin: "https://www.linkedin.com/in/elenizafeiri",
+      instagram: "https://instagram.com/technotesgr",
     },
   },
 
   skills: {
-    languages: ["C","C++", "HTML", "CSS", "JS"],
-    frameworks: ["React.js"," Tailwind CSS"],
-    concepts: ["AI Prompting", "Product Management","Web Development"],
+    languages: ["C", "C++", "Java", "JavaScript", "HTML", "CSS"],
+    frameworks: ["React.js", "Tailwind CSS", "WordPress"],
+    concepts: [
+      "Product discovery",
+      "Requirements & MVP",
+      "Feature prioritization",
+      "Agile / Scrum",
+      "Stakeholder communication",
+      "User-centered design",
+      "Risk management",
+      "Prompt engineering",
+      "GenAI for PM & sales",
+      "Mobile app design & development",
+      "Startup development & pitching",
+      "ESG & innovation challenges",
+    ],
   },
 
   softskills: {
-    corporate: ["Teamwork", "Communication", "Creativity","Problem-Solving","Passion"],
+    corporate: [
+      "Cross-functional coordination",
+      "Requirements → technical specs",
+      "Event & hackathon planning",
+      "Mentoring & workshops",
+      "Hands-on digital literacy support",
+    ],
   },
 
   projects: [
     {
       id: 1,
-      title: "Full Stack Tutor for Computer Science Students",
+      title: "Website for CS students",
       description:
-        "Currently developing a full-stack educational platform designed to support high school students in preparing for the Panhellenic exams in Informatics.It offers interactive quizzes, flashcards, past exam papers, gamified learning experiences, and study notes to enhance student engagement and learning outcomes.",
-      technologies: ["HTML", "Tailwind CSS", "Typescript", "Python", "React.js","JavaScript"],
+        "Full-stack web platform for computer science students: structured quizzes, flashcards, and algorithm visualizations to support exam preparation. Used by 50+ students.",
+      technologies: ["React.js", "Tailwind CSS", "TypeScript", "JavaScript", "Python"],
       features: [
-        "Interactive Quizzes",
-        "Online Courses",
-        "Flashcards Mode",
-        "Past Exam Papers",
-        "Universities",
+        "Quizzes & practice modes",
+        "Flashcards",
+        "Algorithm visualizations",
+        "Exam-oriented study flows",
       ],
       github_url: "https://github.com/feirw/technotesgr",
       demo_url: "#",
       status: "in progress",
     },
-    {
-      id: 2,
-      title: "Hook & Grab: Online Marketplace for Second-Hand Fishing Gear",
-      description:
-        "Full stack website - My team and I built an online marketplace where amateur fishers can buy and sell second-hand fishing gear, promoting sustainability and resource reuse. Developed during the 2nd Blue and Circular Economy Hackathon (1st place). I also pitched the idea and managed the project.",
-      technologies: ["HTML", "CSS", "Python", "React.js"],
-      features: [
-        "User authentication",
-        "Product listings",
-        "Search and filter",
-        "Secure payments",
-      ],
-      github_url: "https://github.com/feirw/hook-and-grab",
-      demo_url: "#",
-      status: "completed",
-    },
-  // {
-  //   id: 3,
-  //   title: "AthensGo: AI-Powered Personalized & Accessible City Tours",
-  //   description:
-  //       "Full stack mobile application - Developed during the City of Athens Hackathon, AthensGo uses advanced AI (Reinforcement Learning) to instantly create optimized, multi-day routes based on user interests, dietary needs (allergies), and **100% mobility accessibility**. Our goal is inclusive, stress-free travel. I pitched the idea, managed the project, and implemented core logic.",
-  //   technologies: ["React Native", "Tailwind CSS", "JavaScript", "Python (AI Backend)", "OpenStreetMaps API"],
-  //   features: [
-  //       "AI Route Optimization (DQN Logic)",
-  //       "100% Accessibility Filter & Data Crowdsourcing",
-  //       "Local Guide/Agency Booking Platform",
-  //       "Gamification & Reward System"
-  //   ],
-  //   github_url: "https://github.com/Apps4Athens-Hackathon-2-0/39_AthensGo",
-  //   demo_url: "#",
-  //   status: "completed"
-  // },
-
   ],
 
   experience: [
     {
       id: 1,
-      company: "technotesgr",
-      position: "Computer Science Tutor & Content Creator",
-      duration: "Sept 2024 - Present",
-      location: "Remote",
+      company: "HongLong",
+      position: "Product Owner",
+      duration: "Sep 2025 – Present",
+      location: "Athens, Greece",
       description:
-        "Creating educational content and providing tutoring to high school students for the Panhellenic exams in Informatics.",
+        "Joined as Web Developer (Sep 2025); promoted to Product Owner (Feb 2026). Owns product prioritization, roadmap alignment, and stakeholder communication for the educational platform, while continuing to maintain and evolve the organization’s WordPress site.",
       achievements: [
-        "Grew TikTok and Instagram accounts to over 100.000 views.",
-        "Received positive feedback from students with grade improvements.",
-        "Authored a book on programming basics for high school students.",
+        "Promoted to Product Owner in February 2026, leading product decisions and cross-functional alignment.",
+        "Maintained and updated the WordPress site; resolved an average of ~7 technical support tickets weekly in the earlier web-focused phase.",
+        "Reduced website errors by 40% within the first six months through systematic fixes and quality improvements.",
       ],
     },
     {
       id: 2,
       company: "Threenitas",
-      position: "Business Analyst & Project Manager Internship",
-      duration: "September 2025 - October 2025",
-      location: "Hybrid, Athens, Greece",
+      position: "Project Manager Intern",
+      duration: "Sep 2025 – Oct 2025",
+      location: "Athens, Greece",
       description:
-        "Learned how to effectively lead the planning and execution of software projects, ensuring delivery on time and within budget.",
+        "Supported delivery of digital solutions by aligning business and engineering around clear scope and timelines.",
       achievements: [
-        "Improved onboarding process for trainees with structure notes and organized templates",
+        "Coordinated cross-functional teams of 5+ members for timely delivery.",
+        "Translated business requirements into clear technical specifications for engineering teams.",
       ],
     },
-   
   ],
 
   education: {
-    degree: "Bachelor in Computer Science",
+    degree: "Bachelor of Science in Computer Science",
     university: "National and Kapodistrian University of Athens",
-    duration: "2024 - 2028",
-    gpa: "8.53/10",
+    duration: "2024 – 2028",
+    gpa: "8.54/10",
     relevant_courses1: [
       "Computer Fundamentals",
-      "Artificial Intelligence",
-      "Project & Product Management",
-      "Web Development",
       "Object-Oriented Programming",
+      "Data Structures & Algorithms",
+      "Discrete Mathematics",
+      "Probability & Statistics",
+      "Artificial Intelligence",
+      "Web Development",
+      "Database Systems",
+      "Computer Networks",
+      "Operating Systems",
+      "Software Engineering",
+      "Human–Computer Interaction",
+      "Project & Product Management",
     ],
     relevant_courses2: [
       "Computer Science",
@@ -127,153 +127,209 @@ export const portfolioData = {
       "Linear Algebra",
       "Technology",
     ],
-    achievements1: [
-      "1st Place at 2nd Blue and Circular Economy Hackathon by Odyssea.(Hook & Grab project).",
-      "Awarded by AUEB's competition ERMIS in Micro & Macro Economics.",
-      "Semi Finalist at Business Hackathon Ennovation 2025 (AI-driven maritime consulting).",
-      "Participated in Greece-Turkey Hackathon 2025 (step tracker app).",
-      "Participated in AI hackathon by Crowdpolicy (AthensGo app).",
-    ],
     achievements2: [
-      "Awarded by Eurobank for being in the top 1% of students in panhellenic exams (19.000/20.000).",
-      "Awarded by Cultural Center of Lamia & Newspaper LamiaReport for the highest academic performance in my High School.",
+      "Top 1% Panhellenic performance (19.00/20.00) — Eurobank recognition.",
+      "Highest academic performance — General High School of Spercheiada (19.7/20); recognition by Cultural Center of Lamia & LamiaReport.",
     ],
   },
 
+  /* Certificates: reverse chronological (newest first) by issue month/year */
   certificates: [
     {
+      id: 10,
+      title: "Product Launches (PRLC)",
+      issuer: "Product School",
+      date: "1/2026",
+      description:
+        "Product launch lifecycle and execution — MVP definition, feature prioritization, go-to-market alignment, and cross-functional coordination for successful releases.",
+      link: "https://productschool.com/",
+    },
+    {
+      id: 11,
+      title: "Product Strategy (PSC)",
+      issuer: "Product School",
+      date: "1/2026",
+      description:
+        "Product strategy and roadmap thinking — product management fundamentals, delivery planning, stakeholder alignment, and strategic prioritization.",
+      link: "https://productschool.com/",
+    },
+    {
       id: 0,
-      title: "Foundations of Prompt Engineering",
+      title: "Prompt Engineering",
       issuer: "Amazon Web Services (AWS)",
       date: "12/2025",
-      description: "Learned how to make effective prompts for AI models.",
+      description: "Effective prompting for generative AI workflows.",
       link: "https://www.aws.training/",
       certificatePdf: "/certificates/prompt.pdf",
-
     },
-    
     {
       id: 1,
-      title: "Project Management & AI Integrations",
+      title: "Project Management",
       issuer: "Workearly",
       date: "9/2025",
-      description: "Discovered the role of a project manager and AI tools.",
+      description: "Project management practice and AI integrations in delivery.",
       link: "https://workearly.gr/",
       certificatePdf: "/certificates/workearly.pdf",
     },
     {
-      id: 2,
+      id: 3,
       title: "Digital Literacy Awareness",
-      issuer: "CISCO Networking Academy",
+      issuer: "Cisco Networking Academy",
       date: "8/2025",
-      description: "Comprehensive training in digital literacy.",
+      description: "Foundational digital literacy and safe technology use.",
       link: "https://www.netacad.com/",
       certificatePdf: "/certificates/dig.pdf",
     },
     {
-      id: 3,
-      title: "Cybersecurity Essentials",
-      issuer: "Cisco Networking Academy",
-      date: "7/2025",
-      description: "Learned about malware,protocols,networking and security.",
-      link: "https://www.netacad.com/",
-      certificatePdf: "/certificates/cisco.pdf",
-    },
-    {
-      id: 4,
+      id: 12,
       title: "GenAI for Project Management & Sales",
-      issuer: "The Tipping Point",
+      issuer: "The Tipping Point in Education",
       date: "6/2025",
-      description: "Learned how to effectively use generative AI in project management and sales.",
+      description:
+        "Using generative AI in project management and sales — AI for project management, GenAI tooling, and effective AI prompting in professional workflows.",
       link: "https://thetippingpoint.org/",
-      certificatePdf: "/certificates/tip.pdf",
     },
     {
-      id: 5,
+      id: 2,
       title: "Effective Data Communication & Storytelling",
       issuer: "Deloitte",
       date: "1/2025",
-      description: "How to pitch an idea effectively using data storytelling techniques.",
+      description: "Data storytelling and pitching ideas with clarity.",
       link: "https://www2.deloitte.com/",
       certificatePdf: "/certificates/deloite.pdf",
     },
     {
-      id: 6,
+      id: 13,
       title: "Team Leadership & Problem Solving Training",
       issuer: "Linq",
-      date: "1/2025-5/2025",
-      description: "How to be an excellent team leader who controls conflicts and does the best for the team without being authoritarian.",
+      date: "1/2025",
+      description:
+        "Training on leading teams and solving problems constructively — leadership, mentoring, personal development, team leadership, creativity and innovation, strategy, and creative problem solving. (Programme period Jan 2025 – Apr 2025.)",
       link: "https://linq.org/",
-      certificatePdf: "/certificates/",
     },
   ],
 
-  volunteer: [
+  /* Display order: Hook & Grab → Crazy Business Ideas → Greece/Türkiye → Ennovation → Crowdpolicy AI */
+  hackathons: [
     {
-      id: 1,
-      role: "Project Buddy",
-      organization: "Sistech Global",
-      duration: "10/2025 - 12/2025",
-      location: "Remote",
+      id: 3,
+      title: "Hook & Grab — 2nd Blue & Circular Economy Hackathon",
+      organizer: "Odyssea",
+      period: "2025",
       description:
-        "Helping women to keep up with technology tools",
+        "Full-stack marketplace for second-hand fishing gear and marine pollution awareness; co-defined MVP and shipped under hackathon constraints.",
+      skills: ["Full-stack delivery", "Product discovery", "Sustainability & circular economy"],
+      highlight: "1st place among 10+ competing teams",
+      linkUrl: "https://github.com/feirw/hook-and-grab",
+      linkLabel: "View repository",
+    },
+    {
+      id: 5,
+      title: "Crazy Business Ideas",
+      organizer: "IST College",
+      period: "2026",
+      description:
+        "Entrepreneurship and pitching competition for bold venture concepts. Developed “Luggage”, a tourism-focused business idea spanning traveller needs, market fit, and go-to-market storytelling.",
+      skills: [
+        "Tourism & hospitality",
+        "Entrepreneurship",
+        "Business model & pitching",
+        "Value proposition design",
+      ],
+      highlight: "3rd place",
     },
     {
       id: 1,
-      role: "Social Media Manager",
-      organization: "HackHarvard 2025",
-      duration: "9/2025",
-      location: "Remote",
+      title: "Startup Development Hackathon — Greece / Türkiye 2025",
+      organizer: "Ministry of Foreign Affairs of the Hellenic Republic",
+      period: "Dec 2024 – Feb 2025",
       description:
-        "I designed Insta & Linkedin posts, stories, and reels to promote the event and engage participants.",
+        "Greece–Türkiye bilateral programme: intensive startup development sprint with focus on pitching and building a mobile product narrative under time pressure.",
+      skills: [
+        "Pitching ideas",
+        "Startup development",
+        "Mobile application development",
+        "Mobile application design",
+      ],
+      highlight: "Semi-finalist",
     },
     {
       id: 2,
-      role: "Volunteer for Technology Events",
-      organization: "WeLead",
-      duration: "3/2025 - 8/2025",
-      location: "On-site",
+      title: "Business Hackathon “Ennovation”",
+      organizer: "ACE | AUEB (Athens Center for Entrepreneurship)",
+      period: "Feb 2025 – Jun 2025",
       description:
-        "Assisting in organizing and managing tech events aimed at empowering women in Technology.",
-     
+        "Business and innovation hackathon blending ESG themes, web design, and startup development — from problem framing to demo-ready storytelling.",
+      skills: [
+        "Environmental, Social & Governance (ESG)",
+        "Web design",
+        "Startup development",
+        "Entrepreneurial ideas",
+      ],
+      highlight: "Semi-finalist",
     },
     {
-      id: 3,
-      role: "Main Stage Support",
-      organization: "Talent Days 2025 by Linq",  
-      duration: "4/2025",
-      location: "On-site",
+      id: 4,
+      title: "AI Hackathon by Crowdpolicy — AthensGo",
+      organizer: "Crowdpolicy · City of Athens (Apps for Athens)",
+      period: "2025",
       description:
-        "Assisted in managing the main stage, coordinating speakers, and ensuring smooth transitions between sessions.",
-    },
-    {
-      id: 3,
-      role: "Hackathon Coordinator & Mentor",
-      organization: "Texas A&M University Hackathon",  
-      duration: "2/2025",
-      location: "On-site",
-      description:
-        "Planed the event,made the time schedule, designed the posts for social media, and mentored participants during the hackathon.The event was hosted by UoA and Texas A&M University in Athens.",
-    },
-    {
-      id: 3,
-      role: "Project Manager & Mentor",
-      organization: "DIT Coding Club",  
-      duration: "12/2024 - Present",
-      location: "Hybrid",
-      description:
-        "My team and I organize events and hackathons in the Department of Informatics and Telecommunications of University of Athens, mentor students on their projects, and help them develop their technical and teamwork skills.",
+        "AI hackathon build: AthensGo — accessible, personalized itineraries with persona-driven MVP definition (allergies, mobility, preferences).",
+      skills: ["MVP & persona analysis", "Accessibility-minded product", "AI product scoping"],
+      highlight: "Participated",
+      linkUrl: "https://github.com/Apps4Athens-Hackathon-2-0/39_AthensGo",
+      linkLabel: "View repository",
     },
   ],
 
-  photos : [ 
+  /* Volunteer: ongoing first, then reverse chronological by end / recency */
+  volunteer: [
+    {
+      id: 1,
+      role: "Project Manager",
+      organization: "DiT Coding Club (NKUA)",
+      duration: "Dec 2024 – Present",
+      location: "Hybrid, Athens",
+      description:
+        "Planned and coordinated 4+ hackathons and tech events, managing organizing teams of 10+ members and supporting 150+ student participants.",
+    },
+    {
+      id: 3,
+      role: "Project Buddy",
+      organization: "Sistech Global",
+      duration: "Sep 2025 – Dec 2025",
+      location: "Remote",
+      description:
+        "Hands-on digital and AI support for 10+ refugee women, building practical technology skills for professional integration.",
+    },
+    {
+      id: 2,
+      role: "Hackathon Coordinator",
+      organization: "Texas A&M University × University of Athens",
+      duration: "Feb 2025 – Mar 2025",
+      location: "Athens, Greece",
+      description:
+        "Supported international hackathon operations: logistics and communication for 80+ participants across two universities.",
+    },
+    {
+      id: 4,
+      role: "Volunteer for Tech Events",
+      organization: "WELEAD",
+      duration: "Feb 2025 – Mar 2025",
+      location: "Greece",
+      description:
+        "Reinforced coordination of 3+ tech events, assisting with logistics and workshops for 100+ participants.",
+    },
+  ],
+
+  photos: [
     {
       url: "/photos/123.jpg",
       title: "HackHarvard 2025",
       description: "Volunteering as Social Media Manager for HackHarvard 2025.",
-      tag : "volunteer"
+      tag: "volunteer",
     },
-  
-  ]
-};  
+  ],
+};
+
 export default portfolioData;

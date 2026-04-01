@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Heart, Code, Coffee } from 'lucide-react';
+import { Github, Linkedin, Mail, Heart, Code, Coffee, Instagram } from 'lucide-react';
 import portfolioData from './data/mock';
 
 const Footer = () => {
@@ -10,7 +10,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-t from-black to-gray-900 border-t border-gray-800 relative overflow-hidden">
+    <footer className="bg-gradient-to-t from-black via-zinc-950 to-zinc-900/80 border-t border-white/[0.06] relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white to-transparent"></div>
@@ -18,8 +18,8 @@ const Footer = () => {
         <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-gray-600 to-transparent"></div>
       </div>
 
-      <div className="container mx-auto px-6 py-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 py-14 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           {/* Brand Section */}
           <div className="space-y-4">
             <button
@@ -45,17 +45,21 @@ const Footer = () => {
             <div className="space-y-2">
               {[
                 { name: 'About', href: '#about' },
-                { name: 'Projects', href: '#projects' },
                 { name: 'Experience', href: '#experience' },
-                { name: 'Contact', href: '#contact' }
+                { name: 'Projects', href: '#projects' },
+                { name: 'Certificates', href: '#certificates' },
+                { name: 'Hackathons', href: '#hackathons' },
+                { name: 'Volunteer', href: '#volunteer' },
+                { name: 'High school', href: '#highschool' },
+                { name: 'Contact', href: '#contact' },
               ].map((link) => (
                 <button
                   key={link.name}
+                  type="button"
                   onClick={() => {
-                    const element = document.querySelector(link.href);
-                    element?.scrollIntoView({ behavior: 'smooth' });
+                    document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
-                  className="block text-gray-400 hover:text-white transition-colors duration-300 text-sm hover:translate-x-1 transform"
+                  className="block w-full text-left text-zinc-500 hover:text-white transition-colors duration-200 text-sm py-1 rounded-md hover:translate-x-0.5"
                 >
                   {link.name}
                 </button>
@@ -74,23 +78,36 @@ const Footer = () => {
                 <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 <span className="text-sm">{portfolioData.personal.email}</span>
               </a>
-              <div className="flex space-x-4 pt-2">
+              <div className="flex flex-wrap gap-3 pt-2">
                 <a
                   href={portfolioData.personal.social_links.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group"
+                  className="p-2.5 bg-zinc-800/80 rounded-lg border border-zinc-700/50 hover:bg-zinc-700 hover:border-zinc-600 transition-all duration-200 hover:-translate-y-0.5 group min-h-[44px] min-w-[44px] flex items-center justify-center"
+                  aria-label="GitHub"
                 >
-                  <Github className="w-5 h-5 text-gray-400 group-hover:text-white" />
+                  <Github className="w-5 h-5 text-zinc-400 group-hover:text-white" />
                 </a>
                 <a
                   href={portfolioData.personal.social_links.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group"
+                  className="p-2.5 bg-zinc-800/80 rounded-lg border border-zinc-700/50 hover:bg-zinc-700 hover:border-zinc-600 transition-all duration-200 hover:-translate-y-0.5 group min-h-[44px] min-w-[44px] flex items-center justify-center"
+                  aria-label="LinkedIn"
                 >
-                  <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-white" />
+                  <Linkedin className="w-5 h-5 text-zinc-400 group-hover:text-white" />
                 </a>
+                {portfolioData.personal.social_links.instagram && (
+                  <a
+                    href={portfolioData.personal.social_links.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2.5 bg-zinc-800/80 rounded-lg border border-zinc-700/50 hover:bg-zinc-700 hover:border-zinc-600 transition-all duration-200 hover:-translate-y-0.5 group min-h-[44px] min-w-[44px] flex items-center justify-center"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="w-5 h-5 text-zinc-400 group-hover:text-white" />
+                  </a>
+                )}
               </div>
             </div>
           </div>
@@ -103,7 +120,7 @@ const Footer = () => {
               <span>© {currentYear} {portfolioData.personal.name}</span>
               <div className="flex items-center space-x-1">
                 <Code className="w-4 h-4" />
-                <span>Built with React & FastAPI</span>
+                <span>Built with React</span>
               </div>
             </div>
             

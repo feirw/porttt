@@ -17,7 +17,7 @@ const Experience = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const index = parseInt(entry.target.dataset.index);
+            const index = parseInt(entry.target.dataset.index, 10);
             setVisibleItems(prev => new Set([...prev, index]));
           }
         });
@@ -36,7 +36,7 @@ const Experience = () => {
 
   if (loading) {
     return (
-      <section id="experience" ref={sectionRef} className="py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
+      <section id="experience" ref={sectionRef} className="py-20 md:py-28 bg-gradient-to-b from-black via-zinc-950 to-black relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <LoadingSpinner size="large" text="Loading experience..." />
         </div>
@@ -44,9 +44,9 @@ const Experience = () => {
     );
   }
 
-  if (error || !education) {
+  if (error || !education || !Array.isArray(experience)) {
     return (
-      <section id="experience" ref={sectionRef} className="py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
+      <section id="experience" ref={sectionRef} className="py-20 md:py-28 bg-gradient-to-b from-black via-zinc-950 to-black relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <ErrorMessage 
             message={error || "Failed to load experience information"} 
@@ -58,7 +58,7 @@ const Experience = () => {
   }
 
   return (
-    <section id="experience" ref={sectionRef} className="py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
+    <section id="experience" ref={sectionRef} className="py-20 md:py-28 bg-gradient-to-b from-black via-zinc-950 to-black relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-2 h-2 bg-white rounded-full animate-ping"></div>
@@ -66,20 +66,21 @@ const Experience = () => {
         <div className="absolute bottom-20 left-1/3 w-1.5 h-1.5 bg-gray-300 rounded-full animate-ping delay-2000"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-white mb-4">
-            Experience & <span className="bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">Education</span>
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 relative z-10">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+            Experience &{' '}
+            <span className="bg-gradient-to-r from-zinc-200 to-white bg-clip-text text-transparent">education</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            My journey through the professional world and research-based education.
+          <p className="text-zinc-500 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            Work experience, university, and high school.
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-gray-600 to-white mx-auto mt-4"></div>
+          <div className="w-20 h-px bg-gradient-to-r from-transparent via-zinc-500 to-transparent mx-auto mt-6" />
         </div>
 
         <div className="max-w-4xl mx-auto">
           {/* Experience Timeline */}
-          {experience && experience.length > 0 && (
+          {Array.isArray(experience) && experience.length > 0 && (
             <div className="mb-16">
               <h3 className="text-3xl font-bold text-white mb-8 text-center">Work Experience</h3>
               <div className="relative">
@@ -177,74 +178,56 @@ const Experience = () => {
               </CardHeader>
 
               <CardContent>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="text-white font-semibold mb-3">Relevant Coursework</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {education.relevant_courses1.map((course) => (
-                        <Badge 
-                          key={course}
-                          variant="secondary"
-                          className="bg-gray-800 text-gray-300 hover:bg-gray-700 transition-colors text-xs"
-                        >
-                          {course}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <h4 className="text-white font-semibold mb-3 flex items-center">
-                      <Trophy className="w-4 h-4 mr-2" />
-                      Achievements
-                    </h4>
-                    <ul className="space-y-2">
-                      {education.achievements1.map((achievement, idx) => (
-                        <li key={idx} className="text-gray-300 flex items-start">
-                          <div className="w-2 h-2 bg-white rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                          <span>{achievement}</span>
-                        </li>
-                      ))}
-                    </ul>
+                <div>
+                  <h4 className="text-white font-semibold mb-4">Relevant coursework</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {education.relevant_courses1.map((course) => (
+                      <Badge
+                        key={course}
+                        variant="secondary"
+                        className="bg-gray-800 text-gray-300 hover:bg-gray-700 transition-colors text-xs"
+                      >
+                        {course}
+                      </Badge>
+                    ))}
                   </div>
                 </div>
               </CardContent>
             </Card>
           </div>
 
-
-           <div>
-            <h3 className="text-3xl font-bold text-white mb-8 text-center my-4">My Highschool Experience</h3>
-            <Card className="bg-gradient-to-br from-gray-900/90 to-black/90 border-gray-700 hover:border-gray-500 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-white/10 backdrop-blur-sm">
+          <div id="highschool" className="mt-14 md:mt-20 scroll-mt-28">
+            <h3 className="text-3xl font-bold text-white mb-8 text-center">
+              My high school experience
+            </h3>
+            <Card className="bg-gradient-to-br from-gray-900/90 to-black/90 border-gray-700 hover:border-gray-500 transition-all duration-500 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-white/10 backdrop-blur-sm">
               <CardHeader>
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                  <CardTitle className="text-2xl font-bold text-white">
-                    High School Diploma : Computer Science & Finance
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-3">
+                  <CardTitle className="text-xl sm:text-2xl font-bold text-white leading-snug">
+                    High School Diploma: Computer Science &amp; Finance
                   </CardTitle>
-                  <Badge variant="secondary" className="bg-gray-800 text-gray-300 w-fit mt-2 md:mt-0">
+                  <Badge variant="secondary" className="bg-gray-800 text-gray-300 w-fit shrink-0">
                     GPA: 19.7/20
                   </Badge>
                 </div>
-                
-                <div className="space-y-2">
-                  <div className="flex items-center text-gray-400">
-                    <Building className="w-4 h-4 mr-2" />
+                <div className="space-y-2 text-gray-400 text-sm sm:text-base">
+                  <div className="flex items-center gap-2">
+                    <Building className="w-4 h-4 shrink-0" />
                     <span>General High School of Spercheiada</span>
                   </div>
-                  <div className="flex items-center text-gray-400">
-                    <Calendar className="w-4 h-4 mr-2" />
-                    <span>2021 - 2024</span>
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-4 h-4 shrink-0" />
+                    <span>2021 – 2024</span>
                   </div>
                 </div>
               </CardHeader>
-
               <CardContent>
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                   <div>
-                    <h4 className="text-white font-semibold mb-3">Relevant Coursework</h4>
+                    <h4 className="text-white font-semibold mb-3">Relevant coursework</h4>
                     <div className="flex flex-wrap gap-2">
                       {education.relevant_courses2.map((course) => (
-                        <Badge 
+                        <Badge
                           key={course}
                           variant="secondary"
                           className="bg-gray-800 text-gray-300 hover:bg-gray-700 transition-colors text-xs"
@@ -254,16 +237,15 @@ const Experience = () => {
                       ))}
                     </div>
                   </div>
-                  
                   <div>
-                    <h4 className="text-white font-semibold mb-3 flex items-center">
-                      <Trophy className="w-4 h-4 mr-2" />
+                    <h4 className="text-white font-semibold mb-3 flex items-center gap-2">
+                      <Trophy className="w-4 h-4" />
                       Achievements
                     </h4>
                     <ul className="space-y-2">
                       {education.achievements2.map((achievement, idx) => (
-                        <li key={idx} className="text-gray-300 flex items-start">
-                          <div className="w-2 h-2 bg-white rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                        <li key={idx} className="text-gray-300 flex items-start text-sm leading-relaxed">
+                          <span className="w-2 h-2 bg-white rounded-full mr-3 mt-2 shrink-0" />
                           <span>{achievement}</span>
                         </li>
                       ))}

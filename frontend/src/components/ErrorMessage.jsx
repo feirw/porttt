@@ -8,7 +8,7 @@ const ErrorMessage = ({
   showRetry = true 
 }) => {
   return (
-    <div className="flex flex-col items-center justify-center space-y-4 py-8 px-4">
+    <div className="flex flex-col items-center justify-center space-y-4 py-8 px-4" role="alert">
       <div className="flex items-center space-x-3 text-red-400">
         <AlertCircle className="w-6 h-6" />
         <span className="text-lg font-medium">Error</span>

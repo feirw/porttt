@@ -38,7 +38,7 @@ const Certificates = () => {
       <section
         id="certificates"
         ref={sectionRef}
-        className="py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden"
+        className="py-20 md:py-28 bg-gradient-to-b from-black via-zinc-950 to-zinc-900 relative overflow-hidden"
       >
         <div className="container mx-auto px-6 relative z-10">
           <LoadingSpinner size="large" text="Loading certificates..." />
@@ -52,7 +52,7 @@ const Certificates = () => {
       <section
         id="certificates"
         ref={sectionRef}
-        className="py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden"
+        className="py-20 md:py-28 bg-gradient-to-b from-black via-zinc-950 to-zinc-900 relative overflow-hidden"
       >
         <div className="container mx-auto px-6 relative z-10">
           <ErrorMessage
@@ -68,7 +68,7 @@ const Certificates = () => {
     <section
       id="certificates"
       ref={sectionRef}
-      className="py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden"
+      className="py-20 md:py-28 bg-gradient-to-b from-black via-zinc-950 to-zinc-900 relative overflow-hidden"
     >
       {/* Animated background dots */}
       <div className="absolute inset-0">
@@ -77,18 +77,18 @@ const Certificates = () => {
         <div className="absolute bottom-20 left-1/3 w-1.5 h-1.5 bg-gray-300 rounded-full animate-ping delay-2000"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-white mb-4">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 relative z-10">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
             Certificates &{" "}
-            <span className="bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
-              Licenses
+            <span className="bg-gradient-to-r from-zinc-200 to-white bg-clip-text text-transparent">
+              licenses
             </span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Professional certifications and courses I have completed.
+          <p className="text-zinc-500 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            Courses and credentials that shaped my technical and professional skills.
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-gray-600 to-white mx-auto mt-4"></div>
+          <div className="w-20 h-px bg-gradient-to-r from-transparent via-zinc-500 to-transparent mx-auto mt-6" />
         </div>
 
         <div className="max-w-4xl mx-auto space-y-12">
@@ -125,12 +125,24 @@ const Certificates = () => {
                       </div>
                       {cert.certificatePdf && (
                         <button
-                          onClick={() => window.open(cert.certificatePdf)}
+                          type="button"
+                          onClick={() => window.open(cert.certificatePdf, "_blank")}
                           className="flex items-center text-gray-400 hover:text-white transition-colors duration-300"
                         >
                           <LinkIcon className="w-4 h-4 mr-2" />
-                          View Certificate
+                          View certificate (PDF)
                         </button>
+                      )}
+                      {cert.link && (
+                        <a
+                          href={cert.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                        >
+                          <LinkIcon className="w-4 h-4 mr-2 shrink-0" />
+                          Issuer / programme
+                        </a>
                       )}
                     </div>
 

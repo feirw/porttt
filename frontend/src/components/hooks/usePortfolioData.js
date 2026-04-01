@@ -69,7 +69,12 @@ export const useCertificates = () => {
 export const useVolunteer = () => {
   const { data, loading, error } = useMockData(portfolioData.volunteer);
   return { volunteer: data, loading, error };
-}
+};
+
+export const useHackathons = () => {
+  const { data, loading, error } = useMockData(portfolioData.hackathons);
+  return { hackathons: data, loading, error };
+};
 
 
 export const useContactForm = () => {

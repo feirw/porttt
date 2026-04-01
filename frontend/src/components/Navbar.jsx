@@ -1,42 +1,81 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Button } from './ui/button';
 import { Menu, X, Github, Download } from 'lucide-react';
 import { usePersonalInfo } from './hooks/usePortfolioData';
 
+const SECTION_IDS = ['about', 'experience', 'projects', 'certificates', 'hackathons', 'volunteer', 'highschool', 'contact'];
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
   const { personalInfo, loading } = usePersonalInfo();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
-      setScrolled(isScrolled);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navItems = [
     { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Projects', href: '#projects' },
+    { name: 'Certificates', href: '#certificates' },
+    { name: 'Hackathons', href: '#hackathons' },
+    { name: 'Volunteer', href: '#volunteer' },
+    { name: 'High school', href: '#highschool' },
+    { name: 'Contact', href: '#contact' },
   ];
 
-  const scrollToSection = (href) => {
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.target.id) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-42% 0px -42% 0px', threshold: 0 }
+    );
+
+    SECTION_IDS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  const scrollToSection = useCallback((href) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     setIsOpen(false);
-  };
+  }, []);
 
-  // Show initials or loading state
   const getInitials = () => {
-    if (loading || !personalInfo) return 'Loading...';
-    return personalInfo.name.split(' ').map(word => word.charAt(0)).join('');
+    if (loading || !personalInfo) return '···';
+    return personalInfo.name
+      .split(' ')
+      .map((word) => word.charAt(0))
+      .join('');
   };
 
   const getGithubUrl = () => {
@@ -48,53 +87,68 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-black/90 backdrop-blur-md border-b border-gray-800' 
-        : 'bg-transparent'
-    }`}>
-      <div className="container mx-auto px-6">
+    <nav
+      aria-label="Primary"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-black/85 backdrop-blur-lg border-b border-white/[0.06] shadow-[0_8px_30px_rgba(0,0,0,0.45)]'
+          : 'bg-black/40 backdrop-blur-sm'
+      }`}
+    >
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <div className="flex-shrink-0">
             <button
+              type="button"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent hover:from-gray-300 hover:to-white transition-all duration-300"
+              className="text-xl sm:text-2xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent hover:from-gray-200 hover:to-white transition-all duration-300 rounded-md px-1 min-h-[44px] min-w-[44px] flex items-center justify-start"
+              aria-label="Scroll to top"
             >
               {getInitials()}
             </button>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              {navItems.map((item) => (
+          <div className="hidden lg:flex lg:items-center lg:gap-1 xl:gap-2">
+            {navItems.map((item) => {
+              const id = item.href.replace('#', '');
+              const isActive = activeSection === id;
+              return (
                 <button
                   key={item.name}
+                  type="button"
                   onClick={() => scrollToSection(item.href)}
-                  className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group"
+                  className={`rounded-md px-3 py-2 text-sm font-medium transition-colors duration-200 relative min-h-[40px] ${
+                    isActive
+                      ? 'text-white'
+                      : 'text-gray-400 hover:text-white'
+                  }`}
                 >
                   {item.name}
-                  <span className="absolute inset-x-0 bottom-0 h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                  <span
+                    className={`absolute inset-x-2 bottom-1 h-0.5 rounded-full bg-white transition-transform duration-300 origin-left ${
+                      isActive ? 'scale-x-100' : 'scale-x-0 hover:scale-x-80'
+                    }`}
+                    aria-hidden
+                  />
                 </button>
-              ))}
-            </div>
+              );
+            })}
           </div>
 
-          {/* Desktop Actions */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center gap-2 xl:gap-3">
             <a
               href={getGithubUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-gray-300 hover:text-white transition-colors duration-300"
+              className="p-2.5 text-gray-400 hover:text-white transition-colors duration-200 rounded-md min-h-[44px] min-w-[44px] flex items-center justify-center"
+              aria-label="GitHub profile"
             >
               <Github className="w-5 h-5" />
             </a>
             <Button
               variant="outline"
               size="sm"
-              className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white transition-all duration-300"
+              className="border-white/20 text-gray-200 hover:bg-white/10 hover:text-white hover:border-white/30 transition-all duration-200"
               onClick={() => window.open(getResumeUrl(), '_blank')}
             >
               <Download className="w-4 h-4 mr-2" />
@@ -102,52 +156,67 @@ const Navbar = () => {
             </Button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
+              type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-white p-2 transition-colors duration-300"
+              className="text-gray-300 hover:text-white p-2.5 rounded-md transition-colors duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center"
+              aria-expanded={isOpen}
+              aria-controls="mobile-nav-panel"
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        <div className={`md:hidden transition-all duration-300 ease-in-out ${
-          isOpen 
-            ? 'max-h-96 opacity-100' 
-            : 'max-h-0 opacity-0 overflow-hidden'
-        }`}>
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-black/95 backdrop-blur-md rounded-lg mt-2 border border-gray-800">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="text-gray-300 hover:text-white block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-300 hover:bg-gray-800 rounded-md"
-              >
-                {item.name}
-              </button>
-            ))}
-            
-            <div className="pt-4 border-t border-gray-800 flex flex-col space-y-2">
+        <div
+          id="mobile-nav-panel"
+          className={`lg:hidden overflow-hidden transition-[max-height,opacity] duration-300 ease-out ${
+            isOpen ? 'max-h-[min(85vh,520px)] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+          }`}
+          aria-hidden={!isOpen}
+        >
+          <div className="px-1 pt-2 pb-4 space-y-0.5 bg-black/92 backdrop-blur-xl rounded-xl mt-2 mb-3 border border-white/[0.08] shadow-xl">
+            {navItems.map((item) => {
+              const id = item.href.replace('#', '');
+              const isActive = activeSection === id;
+              return (
+                <button
+                  key={item.name}
+                  type="button"
+                  onClick={() => scrollToSection(item.href)}
+                  className={`flex w-full items-center rounded-lg px-4 py-3 text-left text-base font-medium transition-colors min-h-[48px] ${
+                    isActive
+                      ? 'bg-white/10 text-white'
+                      : 'text-gray-300 hover:bg-white/5 hover:text-white'
+                  }`}
+                >
+                  {item.name}
+                </button>
+              );
+            })}
+
+            <div className="pt-3 mt-2 border-t border-white/[0.08] flex flex-col gap-1">
               <a
                 href={getGithubUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-gray-300 hover:text-white px-3 py-2 transition-colors duration-300 hover:bg-gray-800 rounded-md"
+                onClick={() => setIsOpen(false)}
+                className="flex items-center gap-3 text-gray-300 hover:text-white px-4 py-3 rounded-lg hover:bg-white/5 min-h-[48px]"
               >
-                <Github className="w-5 h-5 mr-2" />
+                <Github className="w-5 h-5 shrink-0" />
                 GitHub
               </a>
               <button
+                type="button"
                 onClick={() => {
                   window.open(getResumeUrl(), '_blank');
                   setIsOpen(false);
                 }}
-                className="flex items-center text-gray-300 hover:text-white px-3 py-2 transition-colors duration-300 hover:bg-gray-800 rounded-md w-full text-left"
+                className="flex items-center gap-3 text-gray-300 hover:text-white px-4 py-3 rounded-lg hover:bg-white/5 w-full text-left min-h-[48px]"
               >
-                <Download className="w-5 h-5 mr-2" />
+                <Download className="w-5 h-5 shrink-0" />
                 Download CV
               </button>
             </div>

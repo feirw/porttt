@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useLayoutEffect, useCallback } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
-import { Github, ExternalLink, Code, Zap } from 'lucide-react';
+import { Github, ExternalLink, Code, Zap, X } from 'lucide-react';
 import { useProjects } from './hooks/usePortfolioData';
 import LoadingSpinner from './LoadingSpinner';
 import ErrorMessage from './ErrorMessage';
@@ -13,24 +13,47 @@ const Projects = () => {
   const sectionRef = useRef(null);
   const { projects, loading, error } = useProjects();
 
-  useEffect(() => {
+  const closeModal = useCallback(() => setSelectedProject(null), []);
+
+  useLayoutEffect(() => {
+    if (!projects?.length) return undefined;
+    const node = sectionRef.current;
+
+    const revealAll = () => {
+      setVisibleCards(new Set(projects.map((_, i) => i)));
+    };
+
+    if (!node) {
+      revealAll();
+      return undefined;
+    }
+
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = parseInt(entry.target.dataset.index);
-            setVisibleCards(prev => new Set([...prev, index]));
-          }
-        });
+      ([entry]) => {
+        if (entry.isIntersecting) revealAll();
       },
-      { threshold: 0.2 }
+      { threshold: 0.05, rootMargin: '0px 0px 40% 0px' }
     );
 
-    const cards = document.querySelectorAll('.project-card');
-    cards.forEach(card => observer.observe(card));
-
+    observer.observe(node);
     return () => observer.disconnect();
   }, [projects]);
+
+  useEffect(() => {
+    if (!selectedProject) return undefined;
+
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') closeModal();
+    };
+    document.addEventListener('keydown', onKeyDown);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [selectedProject, closeModal]);
 
   if (loading) {
     return (
@@ -58,14 +81,16 @@ const Projects = () => {
   const ProjectCard = ({ project, index }) => {
     const isVisible = visibleCards.has(index);
     
+    const openDetails = () => setSelectedProject(project);
+
     return (
-      <Card 
-        className={`project-card bg-gradient-to-br from-gray-900/90 to-black/90 border-gray-700 hover:border-gray-500 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-white/20 group cursor-pointer backdrop-blur-sm ${
+      <Card
+        className={`project-card relative overflow-hidden bg-gradient-to-br from-gray-900/90 to-black/90 border-zinc-700/80 hover:border-zinc-500/90 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40 group cursor-pointer backdrop-blur-sm ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
         style={{ transitionDelay: `${index * 200}ms` }}
         data-index={index}
-        onClick={() => setSelectedProject(project)}
+        onClick={openDetails}
       >
         <CardHeader className="pb-4">
           <div className="flex items-start justify-between mb-2">
@@ -106,11 +131,11 @@ const Projects = () => {
             </div>
           </div>
 
-          <div className="flex space-x-3">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
             <Button
               size="sm"
               variant="outline"
-              className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white flex-1 group-hover:border-gray-400 transition-all"
+              className="border-zinc-600 text-zinc-300 hover:bg-zinc-800 hover:text-white flex-1 group-hover:border-zinc-500 transition-all min-h-[44px]"
               onClick={(e) => {
                 e.stopPropagation();
                 window.open(project.github_url, '_blank');
@@ -118,6 +143,18 @@ const Projects = () => {
             >
               <Github className="w-4 h-4 mr-2" />
               Code
+            </Button>
+            <Button
+              type="button"
+              size="sm"
+              variant="ghost"
+              className="text-zinc-500 hover:text-white hover:bg-white/5 flex-1 sm:flex-none min-h-[44px]"
+              onClick={(e) => {
+                e.stopPropagation();
+                openDetails();
+              }}
+            >
+              Details
             </Button>
           </div>
         </CardContent>
@@ -129,26 +166,31 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" ref={sectionRef} className="py-20 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
-      {/* Background Animation */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-gray-600 to-transparent animate-pulse"></div>
-        <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-gray-600 to-transparent animate-pulse delay-1000"></div>
-        <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent animate-pulse delay-500"></div>
+    <section id="projects" ref={sectionRef} className="py-20 md:py-28 bg-gradient-to-b from-zinc-950 via-black to-black relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-zinc-700/40 to-transparent motion-safe:animate-pulse" />
+        <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-zinc-700/40 to-transparent motion-safe:animate-pulse delay-1000" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-white mb-4">
-            My <span className="bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">Projects</span>
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 relative z-10">
+        <div className="text-center mb-14 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+            My <span className="bg-gradient-to-r from-zinc-200 to-white bg-clip-text text-transparent">projects</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Here are some of the projects I've built during my journey as a computer science student.
+          <p className="text-zinc-500 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            Hackathon builds and competition work live in the Hackathons section below.
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-gray-600 to-white mx-auto mt-4"></div>
+          <div className="w-20 h-px bg-gradient-to-r from-transparent via-zinc-500 to-transparent mx-auto mt-6" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <h3 className="text-center text-xl sm:text-2xl font-semibold text-white tracking-tight mb-8 md:mb-10">
+          My passion project
+        </h3>
+
+        <div
+          id="projects-grid"
+          className="grid grid-cols-1 gap-6 md:gap-8 max-w-xl mx-auto"
+        >
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
@@ -156,19 +198,36 @@ const Projects = () => {
 
         {/* Project Details Modal */}
         {selectedProject && (
-          <div 
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-            onClick={() => setSelectedProject(null)}
+          <div
+            className="fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-6 bg-black/75 backdrop-blur-md"
+            onClick={closeModal}
+            role="presentation"
           >
-            <Card 
-              className="bg-gradient-to-br from-gray-900 to-black border-gray-600 max-w-2xl w-full max-h-[80vh] overflow-y-auto"
+            <Card
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="project-dialog-title"
+              className="relative bg-gradient-to-br from-zinc-900 to-black border border-zinc-600/80 max-w-2xl w-full max-h-[min(85vh,720px)] overflow-y-auto shadow-2xl shadow-black/50 rounded-xl"
               onClick={(e) => e.stopPropagation()}
             >
-              <CardHeader>
-                <CardTitle className="text-2xl font-bold text-white mb-2">
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                onClick={closeModal}
+                className="absolute right-3 top-3 z-10 h-10 w-10 rounded-full text-zinc-400 hover:text-white hover:bg-white/10"
+                aria-label="Close project details"
+              >
+                <X className="h-5 w-5" />
+              </Button>
+              <CardHeader className="pr-14">
+                <CardTitle
+                  id="project-dialog-title"
+                  className="text-xl sm:text-2xl font-bold text-white mb-3 leading-snug"
+                >
                   {selectedProject.title}
                 </CardTitle>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-zinc-400 leading-relaxed text-sm sm:text-base">
                   {selectedProject.description}
                 </p>
               </CardHeader>

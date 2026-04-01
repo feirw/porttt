@@ -9,20 +9,24 @@ import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Certificates from "./components/Certificates";
+import Hackathons from "./components/Hackathons";
 import Volunteer from "./components/Volunteer";
 import { Toaster } from "./components/ui/toaster";
 
 const Home = () => {
   return (
     <div className="min-h-screen bg-black">
+      <a href="#about" className="skip-to-content">
+        Skip to main content
+      </a>
       <Navbar />
       <Hero />
       <About />
       <Experience />
       <Projects />
       <Certificates />
+      <Hackathons />
       <Volunteer />
-    
       <Contact />
       <Footer />
     </div>
