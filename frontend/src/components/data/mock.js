@@ -4,8 +4,8 @@ export const portfolioData = {
     name: "Eleni Zafeiri",
     title: "Computer Science Student & Product Owner",
     tagline:
-      "Athens · BSc Computer Science (NKUA) · Product Owner & builder · Web, WordPress, coordination",
-    bio: "Undergraduate in Computer Science at the National and Kapodistrian University of Athens (GPA 8.54/10). At HongLong I started as a Web Developer (9/2025) and was promoted to Product Owner (2/2026), owning prioritization and stakeholder alignment while maintaining the educational WordPress platform. I completed a Project Manager internship at Threenitas, translating business needs into clear specs for engineering teams. I have coordinated hackathons and tech events (e.g. DiT Coding Club, Texas A&M × UoA), volunteered with Sistech Global and WELEAD, and shipped projects such as Hook & Grab (1st place) and a CS learning platform used by 50+ students. I care about clear delivery, accessibility-minded product thinking, and helping others grow in tech. C2 English, B2 French, native Greek.",
+      "Athens · Informatics & Telecommunications (NKUA) · Product Owner",
+    bio: "I am a second-year student in the Department of Informatics and Telecommunications NKUA with a current GPA of 8.54/10. I graduated with honors from my high school (Grade: 19.7/20 & Panhellenic exams: 19.000/20.000). After living in a small village without any experience in technology and in just one year at university, I have participated in several hackathons, attended technology events, earned multiple certifications in technology and product management, volunteered in tech-related projects, and built a strong professional network. At the same time, I run a TikTok and Instagram account, where I provide guidance to high school students in Informatics. My goal is to keep growing, while also helping others develop and succeed in technology.",
     email: "elenzaff@icloud.com",
     phone: "+30 698 342 6662",
     location: "Athens, Greece",
