@@ -111,10 +111,10 @@ const Hackathons = () => {
                     {item.highlight && (
                       <Badge
                         variant="secondary"
-                        className="bg-violet-950/60 text-violet-200 border border-violet-800/50 w-fit shrink-0"
+                        className="bg-violet-950/60 text-violet-200 border border-violet-800/50 w-fit max-w-full sm:max-w-md shrink-0 whitespace-normal text-left inline-flex items-start gap-1.5 py-2 px-3 text-xs sm:text-sm leading-snug"
                       >
-                        <Trophy className="w-3.5 h-3.5 mr-1.5" />
-                        {item.highlight}
+                        <Trophy className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                        <span>{item.highlight}</span>
                       </Badge>
                     )}
                   </div>

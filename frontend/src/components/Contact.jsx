@@ -23,6 +23,11 @@ const Contact = () => {
   const { submitForm, submitting, error: submitError } = useContactForm();
 
   useEffect(() => {
+    if (personalLoading) return undefined;
+
+    const node = sectionRef.current;
+    if (!node) return undefined;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -32,17 +37,9 @@ const Contact = () => {
       { threshold: 0.2 }
     );
 
-    const currentSectionRef = sectionRef.current;
-    if (currentSectionRef) {
-      observer.observe(currentSectionRef);
-    }
-
-    return () => {
-      if (currentSectionRef) {
-        observer.unobserve(currentSectionRef);
-      }
-    };
-  }, []);
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [personalLoading, personalInfo, personalError]);
 
   const handleInputChange = (e) => {
     setFormData({

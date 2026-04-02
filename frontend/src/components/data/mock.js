@@ -5,7 +5,7 @@ export const portfolioData = {
     title: "Computer Science Student & Product Owner",
     tagline:
       "Athens · BSc Computer Science (NKUA) · Product Owner & builder · Web, WordPress, coordination",
-    bio: "Undergraduate in Computer Science at the National and Kapodistrian University of Athens (GPA 8.54/10). At HongLong I started as a Web Developer (Sep 2025) and was promoted to Product Owner (Feb 2026), owning prioritization and stakeholder alignment while maintaining the educational WordPress platform. I completed a Project Manager internship at Threenitas, translating business needs into clear specs for engineering teams. I have coordinated hackathons and tech events (e.g. DiT Coding Club, Texas A&M × UoA), volunteered with Sistech Global and WELEAD, and shipped projects such as Hook & Grab (1st place) and a CS learning platform used by 50+ students. I care about clear delivery, accessibility-minded product thinking, and helping others grow in tech. C2 English, B2 French, native Greek.",
+    bio: "Undergraduate in Computer Science at the National and Kapodistrian University of Athens (GPA 8.54/10). At HongLong I started as a Web Developer (9/2025) and was promoted to Product Owner (2/2026), owning prioritization and stakeholder alignment while maintaining the educational WordPress platform. I completed a Project Manager internship at Threenitas, translating business needs into clear specs for engineering teams. I have coordinated hackathons and tech events (e.g. DiT Coding Club, Texas A&M × UoA), volunteered with Sistech Global and WELEAD, and shipped projects such as Hook & Grab (1st place) and a CS learning platform used by 50+ students. I care about clear delivery, accessibility-minded product thinking, and helping others grow in tech. C2 English, B2 French, native Greek.",
     email: "elenzaff@icloud.com",
     phone: "+30 698 342 6662",
     location: "Athens, Greece",
@@ -64,7 +64,7 @@ export const portfolioData = {
         "Algorithm visualizations",
         "Exam-oriented study flows",
       ],
-      github_url: "https://github.com/feirw/technotesgr",
+      github_url: "https://github.com/feirw/technotesgrr",
       demo_url: "#",
       status: "in progress",
     },
@@ -75,12 +75,12 @@ export const portfolioData = {
       id: 1,
       company: "HongLong",
       position: "Product Owner",
-      duration: "Sep 2025 – Present",
+      duration: "9/2025 – Present",
       location: "Athens, Greece",
       description:
-        "Joined as Web Developer (Sep 2025); promoted to Product Owner (Feb 2026). Owns product prioritization, roadmap alignment, and stakeholder communication for the educational platform, while continuing to maintain and evolve the organization’s WordPress site.",
+        "Joined as Web Developer (9/2025); promoted to Product Owner (2/2026). Owns product prioritization, roadmap alignment, and stakeholder communication for the educational platform, while continuing to maintain and evolve the organization’s WordPress site.",
       achievements: [
-        "Promoted to Product Owner in February 2026, leading product decisions and cross-functional alignment.",
+        "Promoted to Product Owner in 2/2026, leading product decisions and cross-functional alignment.",
         "Maintained and updated the WordPress site; resolved an average of ~7 technical support tickets weekly in the earlier web-focused phase.",
         "Reduced website errors by 40% within the first six months through systematic fixes and quality improvements.",
       ],
@@ -89,7 +89,7 @@ export const portfolioData = {
       id: 2,
       company: "Threenitas",
       position: "Project Manager Intern",
-      duration: "Sep 2025 – Oct 2025",
+      duration: "9/2025 – 10/2025",
       location: "Athens, Greece",
       description:
         "Supported delivery of digital solutions by aligning business and engineering around clear scope and timelines.",
@@ -103,7 +103,7 @@ export const portfolioData = {
   education: {
     degree: "Bachelor of Science in Computer Science",
     university: "National and Kapodistrian University of Athens",
-    duration: "2024 – 2028",
+    duration: "9/2024 – 6/2028",
     gpa: "8.54/10",
     relevant_courses1: [
       "Computer Fundamentals",
@@ -187,7 +187,7 @@ export const portfolioData = {
       date: "6/2025",
       description:
         "Using generative AI in project management and sales — AI for project management, GenAI tooling, and effective AI prompting in professional workflows.",
-      link: "https://thetippingpoint.org/",
+      link: "https://www.thetippingpoint.org.gr/",
     },
     {
       id: 2,
@@ -202,10 +202,10 @@ export const portfolioData = {
       id: 13,
       title: "Team Leadership & Problem Solving Training",
       issuer: "Linq",
-      date: "1/2025",
+      date: "1/2025 – 4/2025",
       description:
-        "Training on leading teams and solving problems constructively — leadership, mentoring, personal development, team leadership, creativity and innovation, strategy, and creative problem solving. (Programme period Jan 2025 – Apr 2025.)",
-      link: "https://linq.org/",
+        "Training on leading teams and solving problems constructively — leadership, mentoring, personal development, team leadership, creativity and innovation, strategy, and creative problem solving.",
+      link: "https://linq.co/",
     },
   ],
 
@@ -215,7 +215,7 @@ export const portfolioData = {
       id: 3,
       title: "Hook & Grab — 2nd Blue & Circular Economy Hackathon",
       organizer: "Odyssea",
-      period: "2025",
+      period: "12/2024",
       description:
         "Full-stack marketplace for second-hand fishing gear and marine pollution awareness; co-defined MVP and shipped under hackathon constraints.",
       skills: ["Full-stack delivery", "Product discovery", "Sustainability & circular economy"],
@@ -227,22 +227,22 @@ export const portfolioData = {
       id: 5,
       title: "Crazy Business Ideas",
       organizer: "IST College",
-      period: "2026",
+      period: "11/2025 – 3/2026",
       description:
-        "Entrepreneurship and pitching competition for bold venture concepts. Developed “Luggage”, a tourism-focused business idea spanning traveller needs, market fit, and go-to-market storytelling.",
+        "Entrepreneurship and pitching competition for bold venture concepts. Developed “Luggease”, a tourism-focused business idea spanning traveller needs, market fit, and go-to-market storytelling.",
       skills: [
         "Tourism & hospitality",
         "Entrepreneurship",
         "Business model & pitching",
         "Value proposition design",
       ],
-      highlight: "3rd place",
+      highlight: "3rd place among 130 participations",
     },
     {
       id: 1,
       title: "Startup Development Hackathon — Greece / Türkiye 2025",
       organizer: "Ministry of Foreign Affairs of the Hellenic Republic",
-      period: "Dec 2024 – Feb 2025",
+      period: "12/2024 – 2/2025",
       description:
         "Greece–Türkiye bilateral programme: intensive startup development sprint with focus on pitching and building a mobile product narrative under time pressure.",
       skills: [
@@ -257,7 +257,7 @@ export const portfolioData = {
       id: 2,
       title: "Business Hackathon “Ennovation”",
       organizer: "ACE | AUEB (Athens Center for Entrepreneurship)",
-      period: "Feb 2025 – Jun 2025",
+      period: "2/2025 – 6/2025",
       description:
         "Business and innovation hackathon blending ESG themes, web design, and startup development — from problem framing to demo-ready storytelling.",
       skills: [
@@ -272,7 +272,7 @@ export const portfolioData = {
       id: 4,
       title: "AI Hackathon by Crowdpolicy — AthensGo",
       organizer: "Crowdpolicy · City of Athens (Apps for Athens)",
-      period: "2025",
+      period: "11/2025",
       description:
         "AI hackathon build: AthensGo — accessible, personalized itineraries with persona-driven MVP definition (allergies, mobility, preferences).",
       skills: ["MVP & persona analysis", "Accessibility-minded product", "AI product scoping"],
@@ -288,7 +288,7 @@ export const portfolioData = {
       id: 1,
       role: "Project Manager",
       organization: "DiT Coding Club (NKUA)",
-      duration: "Dec 2024 – Present",
+      duration: "12/2024 – Present",
       location: "Hybrid, Athens",
       description:
         "Planned and coordinated 4+ hackathons and tech events, managing organizing teams of 10+ members and supporting 150+ student participants.",
@@ -297,7 +297,7 @@ export const portfolioData = {
       id: 3,
       role: "Project Buddy",
       organization: "Sistech Global",
-      duration: "Sep 2025 – Dec 2025",
+      duration: "9/2025 – 12/2025",
       location: "Remote",
       description:
         "Hands-on digital and AI support for 10+ refugee women, building practical technology skills for professional integration.",
@@ -306,7 +306,7 @@ export const portfolioData = {
       id: 2,
       role: "Hackathon Coordinator",
       organization: "Texas A&M University × University of Athens",
-      duration: "Feb 2025 – Mar 2025",
+      duration: "2/2025 – 3/2025",
       location: "Athens, Greece",
       description:
         "Supported international hackathon operations: logistics and communication for 80+ participants across two universities.",
@@ -315,7 +315,7 @@ export const portfolioData = {
       id: 4,
       role: "Volunteer for Tech Events",
       organization: "WELEAD",
-      duration: "Feb 2025 – Mar 2025",
+      duration: "2/2025 – 3/2025",
       location: "Greece",
       description:
         "Reinforced coordination of 3+ tech events, assisting with logistics and workshops for 100+ participants.",

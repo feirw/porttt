@@ -112,7 +112,11 @@ const Certificates = () => {
                       </CardTitle>
                       <Badge
                         variant="secondary"
-                        className="bg-gray-800 text-gray-300 w-fit mt-2 md:mt-0"
+                        className={
+                          cert.id === 13
+                            ? "bg-gray-800 text-gray-200 w-fit mt-2 md:mt-0 text-sm sm:text-base px-3.5 py-2 font-medium tracking-tight shrink-0"
+                            : "bg-gray-800 text-gray-300 w-fit mt-2 md:mt-0"
+                        }
                       >
                         {cert.date}
                       </Badge>

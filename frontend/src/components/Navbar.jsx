@@ -3,7 +3,7 @@ import { Button } from './ui/button';
 import { Menu, X, Github, Download } from 'lucide-react';
 import { usePersonalInfo } from './hooks/usePortfolioData';
 
-const SECTION_IDS = ['about', 'experience', 'projects', 'certificates', 'hackathons', 'volunteer', 'highschool', 'contact'];
+const SECTION_IDS = ['about', 'experience', 'projects', 'hackathons', 'certificates', 'volunteer', 'highschool', 'contact'];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,8 +15,8 @@ const Navbar = () => {
     { name: 'About', href: '#about' },
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Certificates', href: '#certificates' },
     { name: 'Hackathons', href: '#hackathons' },
+    { name: 'Certificates', href: '#certificates' },
     { name: 'Volunteer', href: '#volunteer' },
     { name: 'High school', href: '#highschool' },
     { name: 'Contact', href: '#contact' },

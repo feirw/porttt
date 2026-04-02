@@ -1,29 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { portfolioData } from '../data/mock';
 import emailjs from '@emailjs/browser';
 
-// Helper function to simulate API latency for mock data
-const useMockData = (data) => {
-  const [state, setState] = useState({
-    data: null,
-    loading: true,
-    error: null,
-  });
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setState({
-        data,
-        loading: false,
-        error: null,
-      });
-    }, 500); // 500ms delay to simulate loading
-
-    return () => clearTimeout(timer);
-  }, [data]);
-
-  return state;
-};
+/** Local portfolio data: available immediately (no artificial latency). */
+const useMockData = (data) =>
+  useMemo(() => ({ data, loading: false, error: null }), [data]);
 
 
 // Custom hook for personal info

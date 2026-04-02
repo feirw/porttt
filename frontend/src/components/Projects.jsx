@@ -175,17 +175,10 @@ const Projects = () => {
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 relative z-10">
         <div className="text-center mb-14 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
-            My <span className="bg-gradient-to-r from-zinc-200 to-white bg-clip-text text-transparent">projects</span>
+            My <span className="bg-gradient-to-r from-zinc-200 to-white bg-clip-text text-transparent">passion project</span>
           </h2>
-          <p className="text-zinc-500 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Hackathon builds and competition work live in the Hackathons section below.
-          </p>
           <div className="w-20 h-px bg-gradient-to-r from-transparent via-zinc-500 to-transparent mx-auto mt-6" />
         </div>
-
-        <h3 className="text-center text-xl sm:text-2xl font-semibold text-white tracking-tight mb-8 md:mb-10">
-          My passion project
-        </h3>
 
         <div
           id="projects-grid"
