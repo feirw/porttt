@@ -76,7 +76,7 @@ export const portfolioData = {
       company: "HongLong",
       position: "Product Owner",
       duration: "9/2025 – Present",
-      location: "Athens, Greece",
+      location: "Remote",
       description:
         "Joined as Web Developer (9/2025); promoted to Product Owner (2/2026). Owns product prioritization, roadmap alignment, and stakeholder communication for the educational platform, while continuing to maintain and evolve the organization’s WordPress site.",
       achievements: [
@@ -90,7 +90,7 @@ export const portfolioData = {
       company: "Threenitas",
       position: "Project Manager Intern",
       duration: "9/2025 – 10/2025",
-      location: "Athens, Greece",
+      location: "Hybrid,Athens, Greece",
       description:
         "Supported delivery of digital solutions by aligning business and engineering around clear scope and timelines.",
       achievements: [
