@@ -2,7 +2,13 @@ import React, { useState, useRef, useEffect, useLayoutEffect, useCallback } from
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
-import { Github, ExternalLink, Code, Zap, X } from 'lucide-react';
+import { Github, Code, Zap, X, Youtube, Instagram, Linkedin } from 'lucide-react';
+
+const TikTokGlyph = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+  </svg>
+);
 import { useProjects } from './hooks/usePortfolioData';
 import LoadingSpinner from './LoadingSpinner';
 import ErrorMessage from './ErrorMessage';
@@ -173,12 +179,58 @@ const Projects = () => {
       </div>
 
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 relative z-10">
-        <div className="text-center mb-14 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+        <div className="text-center mb-8 md:mb-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 tracking-tight">
             My <span className="bg-gradient-to-r from-zinc-200 to-white bg-clip-text text-transparent">passion project</span>
           </h2>
-          <div className="w-20 h-px bg-gradient-to-r from-transparent via-zinc-500 to-transparent mx-auto mt-6" />
+          <p className="text-lg sm:text-xl font-medium tracking-wide text-zinc-400 mb-2">
+            technotesgr
+          </p>
+          <div className="w-20 h-px bg-gradient-to-r from-transparent via-zinc-500 to-transparent mx-auto mt-5" />
         </div>
+
+        {projects[0]?.technotesgr_social && (
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-10 md:mb-12">
+            {[
+              {
+                href: projects[0].technotesgr_social.youtube,
+                label: 'TechNotesGR on YouTube',
+                Icon: Youtube,
+              },
+              {
+                href: projects[0].technotesgr_social.instagram,
+                label: 'TechNotesGR on Instagram',
+                Icon: Instagram,
+              },
+              {
+                href: projects[0].technotesgr_social.tiktok,
+                label: 'TechNotesGR on TikTok',
+                Icon: TikTokGlyph,
+                isCustom: true,
+              },
+              {
+                href: projects[0].technotesgr_social.linkedin,
+                label: 'TechNotesGR on LinkedIn',
+                Icon: Linkedin,
+              },
+            ].map(({ href, label, Icon, isCustom }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-800/90 text-zinc-300 ring-1 ring-zinc-700/80 transition-all hover:bg-zinc-700 hover:text-white hover:ring-zinc-500/60"
+              >
+                {isCustom ? (
+                  <Icon className="h-5 w-5" />
+                ) : (
+                  <Icon className="h-5 w-5" strokeWidth={1.75} />
+                )}
+              </a>
+            ))}
+          </div>
+        )}
 
         <div
           id="projects-grid"
@@ -254,21 +306,13 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  <div className="flex space-x-4 pt-4">
+                  <div className="pt-4">
                     <Button
-                      className="bg-white text-black hover:bg-gray-200 flex-1"
+                      className="w-full bg-white text-black hover:bg-gray-200 sm:w-auto"
                       onClick={() => window.open(selectedProject.github_url, '_blank')}
                     >
                       <Github className="w-4 h-4 mr-2" />
                       View Code
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="border-gray-600 text-gray-300 hover:bg-gray-800 flex-1"
-                      onClick={() => window.open(selectedProject.demo_url, '_blank')}
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
                     </Button>
                   </div>
                 </div>

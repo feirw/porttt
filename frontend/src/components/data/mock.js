@@ -7,7 +7,6 @@ export const portfolioData = {
       "Athens · Informatics & Telecommunications (NKUA) · Product Owner",
     bio: "I am a second-year student in the Department of Informatics and Telecommunications NKUA with a current GPA of 8.54/10. I graduated with honors from my high school (Grade: 19.7/20 & Panhellenic exams: 19.000/20.000). After living in a small village without any experience in technology and in just one year at university, I have participated in several hackathons, attended technology events, earned multiple certifications in technology and product management, volunteered in tech-related projects, and built a strong professional network. At the same time, I run a TikTok and Instagram account, where I provide guidance to high school students in Informatics. My goal is to keep growing, while also helping others develop and succeed in technology.",
     email: "elenzaff@icloud.com",
-    phone: "+30 698 342 6662",
     location: "Athens, Greece",
     resume_url: "/resume.pdf",
     spoken_languages: [
@@ -56,17 +55,27 @@ export const portfolioData = {
       id: 1,
       title: "Website for CS students",
       description:
-        "Full-stack web platform for computer science students: structured quizzes, flashcards, and algorithm visualizations to support exam preparation. Used by 50+ students.",
+        "TechnotesGR is a modern, student-first platform that helps high-school candidates prepare for the Panhellenic Informatics exam. It combines fast quizzes with instant feedback, clean flashcards, a supportive community forum, a study timer, a progress tracker, and a friendly AI chatbot—wrapped in a responsive, elegant UI with dark mode. Built for speed, stability, and great UX.",
       technologies: ["React.js", "Tailwind CSS", "TypeScript", "JavaScript", "Python"],
       features: [
-        "Quizzes & practice modes",
-        "Flashcards",
-        "Algorithm visualizations",
-        "Exam-oriented study flows",
+        "Smart quizzes with instant feedback (local-first, retry on reconnect)",
+        "Flashcards for fast revision (keyboard navigation, vertical transitions)",
+        "Community forum with user profiles & clean UI",
+        "Study timer (start/pause/reset, goals, pink theme)",
+        "Progress tracker (interactive syllabus)",
+        "Career orientation questionnaire with saved results",
+        "Dark mode, responsive design, subtle animations",
+        "Session-based AI chatbot (Google Gemini)",
+        "Admin dashboard: user list (secure endpoint)",
       ],
       github_url: "https://github.com/feirw/technotesgrr",
-      demo_url: "#",
       status: "in progress",
+      technotesgr_social: {
+        youtube: "https://www.youtube.com/@technotesgr-elenizafeiri",
+        instagram: "https://www.instagram.com/technotesgr/",
+        tiktok: "https://www.tiktok.com/@technotesgr",
+        linkedin: "https://www.linkedin.com/company/technotesgr",
+      },
     },
   ],
 
@@ -301,7 +310,16 @@ export const portfolioData = {
       location: "Remote",
       description:
         "Hands-on digital and AI support for 10+ refugee women, building practical technology skills for professional integration.",
-    },
+      },
+      {
+        id: 4,
+        role: "Volunteer for Tech Events",
+        organization: "WELEAD",
+        duration: "2/2025 – 5/2025",
+        location: "Athens, Greece",
+        description:
+          "Reinforced coordination of 3+ tech events, assisting with logistics and workshops for 100+ participants.",
+      },
     {
       id: 2,
       role: "Hackathon Coordinator",
@@ -310,15 +328,6 @@ export const portfolioData = {
       location: "Athens, Greece",
       description:
         "Supported international hackathon operations: logistics and communication for 80+ participants across two universities.",
-    },
-    {
-      id: 4,
-      role: "Volunteer for Tech Events",
-      organization: "WELEAD",
-      duration: "2/2025 – 3/2025",
-      location: "Greece",
-      description:
-        "Reinforced coordination of 3+ tech events, assisting with logistics and workshops for 100+ participants.",
     },
   ],
 

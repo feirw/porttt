@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
-import { Mail, MapPin, Phone, Github, Linkedin, Send, InstagramIcon } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin, Send, InstagramIcon } from 'lucide-react';
 import { useToast } from './hooks/use-toast';
 import { usePersonalInfo, useContactForm } from './hooks/usePortfolioData';
 import LoadingSpinner from './LoadingSpinner';
@@ -149,23 +149,6 @@ const Contact = () => {
                     </a>
                   </div>
                 </div>
-
-                {personalInfo.phone && (
-                  <div className="flex items-center space-x-4 p-4 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
-                    <div className="p-3 bg-gray-700 rounded-full shrink-0">
-                      <Phone className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-white font-semibold">Phone</h4>
-                      <a
-                        href={`tel:${personalInfo.phone.replace(/\s/g, '')}`}
-                        className="text-gray-400 hover:text-white transition-colors"
-                      >
-                        {personalInfo.phone}
-                      </a>
-                    </div>
-                  </div>
-                )}
 
                 <div className="flex items-center space-x-4 p-4 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-colors">
                   <div className="p-3 bg-gray-700 rounded-full shrink-0">
