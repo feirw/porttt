@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, useLayoutEffect, useCallback } from
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
-import { Github, Code, Zap, X, Youtube, Instagram, Linkedin } from 'lucide-react';
+import { Github, Code, Zap, X, Youtube, Instagram, Linkedin, Globe } from 'lucide-react';
 
 const TikTokGlyph = ({ className }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
@@ -183,15 +183,39 @@ const Projects = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 tracking-tight">
             My <span className="bg-gradient-to-r from-zinc-200 to-white bg-clip-text text-transparent">passion project</span>
           </h2>
-          <p className="text-lg sm:text-xl font-medium tracking-wide text-zinc-400 mb-2">
-            technotesgr
-          </p>
+          {projects[0]?.website_url ? (
+            <p className="text-lg sm:text-xl font-medium tracking-wide mb-2">
+              <a
+                href={projects[0].website_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-300 underline decoration-zinc-600 underline-offset-4 transition-colors hover:text-white hover:decoration-zinc-400"
+              >
+                technotesgr
+              </a>
+            </p>
+          ) : (
+            <p className="text-lg sm:text-xl font-medium tracking-wide text-zinc-400 mb-2">
+              technotesgr
+            </p>
+          )}
           <div className="w-20 h-px bg-gradient-to-r from-transparent via-zinc-500 to-transparent mx-auto mt-5" />
         </div>
 
-        {projects[0]?.technotesgr_social && (
+        {(projects[0]?.website_url || projects[0]?.technotesgr_social) && (
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-10 md:mb-12">
             {[
+              ...(projects[0]?.website_url
+                ? [
+                    {
+                      href: projects[0].website_url,
+                      label: 'Visit technotesgr.com',
+                      Icon: Globe,
+                    },
+                  ]
+                : []),
+              ...(projects[0]?.technotesgr_social
+                ? [
               {
                 href: projects[0].technotesgr_social.youtube,
                 label: 'TechNotesGR on YouTube',
@@ -213,6 +237,8 @@ const Projects = () => {
                 label: 'TechNotesGR on LinkedIn',
                 Icon: Linkedin,
               },
+                ]
+                : []),
             ].map(({ href, label, Icon, isCustom }) => (
               <a
                 key={label}

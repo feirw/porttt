@@ -69,6 +69,7 @@ export const portfolioData = {
         "Admin dashboard: user list (secure endpoint)",
       ],
       github_url: "https://github.com/feirw/technotesgrr",
+      website_url: "https://technotesgr.com/",
       status: "in progress",
       technotesgr_social: {
         youtube: "https://www.youtube.com/@technotesgr-elenizafeiri",
